@@ -46,6 +46,14 @@ window.CONTENT = {
     }
   },
 
+  /* ----------------------------------------- VALORES (sección «Sobre mí») */
+  values: [
+    { icon: "globe",     text: { es: "Salud global",            en: "Global health" } },
+    { icon: "open",      text: { es: "Ciencia abierta",         en: "Open science" } },
+    { icon: "spark",     text: { es: "Innovación con propósito", en: "Innovation with purpose" } },
+    { icon: "women",     text: { es: "Más mujeres en ciencia",  en: "More women in science" } }
+  ],
+
   /* ---------------------------------------------------- ÁREAS DE EXPERIENCIA */
   areas: [
     { icon: "dna",

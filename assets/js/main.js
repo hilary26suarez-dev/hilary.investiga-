@@ -90,7 +90,11 @@
     tiktok: '<path d="M15 4c.5 2.5 2 4 4.5 4.2M15 4v10.5a4.5 4.5 0 1 1-4.5-4.5c.5 0 1 .1 1.5.2M15 4h-2.5"/>',
     orcid: '<circle cx="12" cy="12" r="9"/><path d="M9 8.5v7M9 6.6v.01M12 8.5v7h1.8a3.5 3.5 0 0 0 0-7H12Z"/>',
     web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
-    external: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
+    external: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+    open: '<path d="M4 7a2 2 0 0 1 2-2h5v14H6a2 2 0 0 0-2 2V7Z"/><path d="M20 7a2 2 0 0 0-2-2h-5v14h5a2 2 0 0 1 2 2V7Z"/>',
+    spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="3"/>',
+    women: '<circle cx="12" cy="7" r="4"/><path d="M12 11v8M9 16h6"/>'
   };
   function svg(name, size) {
     return '<svg viewBox="0 0 24 24" width="' + (size || 20) + '" height="' + (size || 20) +
@@ -131,6 +135,16 @@
       );
       card.style.setProperty("--i", i);
       g.appendChild(card);
+    });
+  }
+
+  function renderValues() {
+    var g = $("#valueList"); if (!g) return; clear(g);
+    (C.values || []).forEach(function (v) {
+      g.appendChild(el("li", {},
+        el("span", { class: "value-ico", html: svg(v.icon, 18) }),
+        el("span", { text: pick(v.text) })
+      ));
     });
   }
 
@@ -365,7 +379,7 @@
   }
 
   function renderAll() {
-    renderAreas(); renderSkills();
+    renderValues(); renderAreas(); renderSkills();
     renderProjects("bioinformatica", "#bioProjects");
     renderProjects("programacion", "#progProjects");
     renderResearch(); renderHospital();
@@ -444,6 +458,28 @@
     items.forEach(function (n) { revealIO.observe(n); });
   }
 
+  function initBio3D() {
+    var nodes = $$("[data-bio3d]");
+    if (!nodes.length || !("IntersectionObserver" in window)) return;
+    // Sin WebGL: dejar el fallback y no cargar three.js
+    try {
+      var c = document.createElement("canvas");
+      if (!(c.getContext("webgl2") || c.getContext("webgl"))) return;
+    } catch (e) { return; }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var elm = en.target;
+        io.unobserve(elm);
+        import("./bio3d.js").then(function (mod) {
+          return mod.mountBio3D(elm, { kind: elm.getAttribute("data-bio3d"), src: elm.getAttribute("data-src") });
+        }).catch(function () { elm.classList.add("bio3d-error"); });
+      });
+    }, { rootMargin: "300px" });
+    nodes.forEach(function (n) { io.observe(n); });
+  }
+
   function initContactForm() {
     var form = $("#contactForm"); if (!form) return;
     form.addEventListener("submit", function (e) {
@@ -485,6 +521,7 @@
     initHeader();
     initScrollSpy();
     initContactForm();
+    initBio3D();
 
     var y = $("#year"); if (y) y.textContent = "© " + new Date().getFullYear();
   });

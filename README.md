@@ -115,19 +115,33 @@ El archivo [`render.yaml`](render.yaml) permite crearlo como *Blueprint* sin toc
 
 ---
 
+## Visores 3D (hero y Bioinformática)
+
+- **Doble hélice de ADN** (hero) y **proteína GFP** (Bioinformática) son 3D reales
+  con [three.js](https://threejs.org), que se carga desde CDN sólo cuando entran en
+  pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
+- La proteína usa la estructura real `assets/models/gfp-1ema.pdb` (GFP, PDB 1EMA).
+- Si no hay internet o WebGL, se muestra una ilustración de respaldo — el sitio no se rompe.
+
+## CV
+
+`assets/docs/cv.html` es tu CV completo como página (botón **CV** del menú). Si querés
+un PDF, exportalo desde el navegador (Imprimir → Guardar como PDF) y enlazalo en su lugar.
+
 ## Estructura
 
 ```
 .
 ├── index.html                  estructura de la página
-├── vercel.json                 config de despliegue (Vercel)
-├── render.yaml                 config de despliegue (Render)
+├── vercel.json / render.yaml    config de despliegue
 ├── assets/
 │   ├── css/styles.css          diseño (tema claro/oscuro)
 │   ├── js/content.js           ← TU CONTENIDO (editá esto)
 │   ├── js/i18n.js              textos de interfaz ES/EN
 │   ├── js/main.js              lógica: render, idioma, tema, animaciones
+│   ├── js/bio3d.js             visores 3D (ADN / proteína) con three.js
 │   ├── img/                    tus fotos
-│   └── docs/                   resumen del COMPAC 2026
+│   ├── models/                 estructura PDB de la proteína
+│   └── docs/                   CV + resúmenes de congresos
 └── README.md
 ```

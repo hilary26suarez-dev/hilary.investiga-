@@ -22,6 +22,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- three.js para los visores 3D (ADN / proteína); se importa bajo demanda -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido" data-i18n="a11y.skip">Saltar al contenido</a>
@@ -51,6 +61,10 @@
       </nav>
 
       <div class="nav-actions">
+        <a class="btn btn-cv" href="assets/docs/cv.html" target="_blank" rel="noopener">
+          <span data-i18n="nav.cv">CV</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        </a>
         <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma">
           <span class="lang-current">ES</span>
         </button>
@@ -88,55 +102,51 @@
           </div>
 
           <ul class="hero-pills">
-            <li><strong data-i18n="hero.pill1a">Ciencia</strong><span data-i18n="hero.pill1b">que conecta</span></li>
-            <li><strong data-i18n="hero.pill2a">Datos</strong><span data-i18n="hero.pill2b">que inspiran</span></li>
-            <li><strong data-i18n="hero.pill3a">Personas</strong><span data-i18n="hero.pill3b">que transforman</span></li>
+            <li>
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.35-6-10a6 6 0 0 1 12 0c0 5.65-6 10-6 10Z"/><path d="M12 3c2 3 2 7 0 10"/></svg></span>
+              <span data-i18n="hero.pill1">Ciencia de impacto</span>
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M4 19a5 5 0 0 1 10 0M14.5 19a4 4 0 0 1 5.5-3.7"/></svg></span>
+              <span data-i18n="hero.pill2">Colaboración sin fronteras</span>
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19v-6M11 19V9M16 19v-9M21 19V6"/></svg></span>
+              <span data-i18n="hero.pill3">Datos para un mejor futuro</span>
+            </li>
           </ul>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="dna-wrap">
-            <svg class="dna" viewBox="0 0 200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Hélice de ADN">
-              <defs>
-                <linearGradient id="dnaGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#5eead4" />
-                  <stop offset="50%" stop-color="#818cf8" />
-                  <stop offset="100%" stop-color="#4ade80" />
-                </linearGradient>
-              </defs>
-              <g class="dna-strands" stroke="url(#dnaGrad)" stroke-width="3" fill="none" stroke-linecap="round">
-                <path d="M60,0 C110,35 110,70 60,105 C10,140 10,175 60,210 C110,245 110,280 60,315 C10,350 10,385 60,420" />
-                <path d="M140,0 C90,35 90,70 140,105 C190,140 190,175 140,210 C90,245 90,280 140,315 C190,350 190,385 140,420" />
-              </g>
-              <g class="dna-rungs" stroke="url(#dnaGrad)" stroke-width="2.5" stroke-linecap="round">
-                <line x1="72" y1="18" x2="128" y2="18" /><line x1="92" y1="40" x2="108" y2="40" />
-                <line x1="72" y1="86" x2="128" y2="86" /><line x1="92" y1="64" x2="108" y2="64" />
-                <line x1="72" y1="122" x2="128" y2="122" /><line x1="92" y1="145" x2="108" y2="145" />
-                <line x1="72" y1="192" x2="128" y2="192" /><line x1="92" y1="168" x2="108" y2="168" />
-                <line x1="72" y1="228" x2="128" y2="228" /><line x1="92" y1="250" x2="108" y2="250" />
-                <line x1="72" y1="298" x2="128" y2="298" /><line x1="92" y1="272" x2="108" y2="272" />
-                <line x1="72" y1="334" x2="128" y2="334" /><line x1="92" y1="356" x2="108" y2="356" />
-                <line x1="72" y1="402" x2="128" y2="402" /><line x1="92" y1="380" x2="108" y2="380" />
-              </g>
-            </svg>
+        <div class="hero-visual">
+          <div class="bio3d bio3d-hero" data-bio3d="dna" role="img" aria-label="Doble hélice de ADN en 3D, rotando">
+            <div class="bio3d-fallback" aria-hidden="true">
+              <svg viewBox="0 0 200 420" preserveAspectRatio="xMidYMid meet">
+                <defs><linearGradient id="dnaGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#40e6b2" /><stop offset="55%" stop-color="#57c8ff" /><stop offset="100%" stop-color="#8affd0" />
+                </linearGradient></defs>
+                <g stroke="url(#dnaGrad)" stroke-width="3.2" fill="none" stroke-linecap="round">
+                  <path d="M60,0 C110,35 110,70 60,105 C10,140 10,175 60,210 C110,245 110,280 60,315 C10,350 10,385 60,420" />
+                  <path d="M140,0 C90,35 90,70 140,105 C190,140 190,175 140,210 C90,245 90,280 140,315 C190,350 190,385 140,420" />
+                </g>
+                <g stroke="url(#dnaGrad)" stroke-width="2.4" stroke-linecap="round" opacity="0.7">
+                  <line x1="72" y1="18" x2="128" y2="18" /><line x1="72" y1="86" x2="128" y2="86" /><line x1="72" y1="122" x2="128" y2="122" /><line x1="72" y1="192" x2="128" y2="192" /><line x1="72" y1="228" x2="128" y2="228" /><line x1="72" y1="298" x2="128" y2="298" /><line x1="72" y1="334" x2="128" y2="334" /><line x1="72" y1="402" x2="128" y2="402" />
+                </g>
+              </svg>
+            </div>
+            <p class="bio3d-tag" aria-hidden="true">Doble hélice · B-DNA</p>
           </div>
-
-          <figure class="code-window">
-            <figcaption class="code-bar">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="code-title">genomica.py</span>
-            </figcaption>
-            <pre class="code-body"><code><span class="c-com"># Analizando secuencias genómicas</span>
-<span class="c-kw">import</span> biopython <span class="c-kw">as</span> bp
-<span class="c-kw">from</span> Bio <span class="c-kw">import</span> SeqIO
-
-<span class="c-kw">for</span> record <span class="c-kw">in</span> SeqIO.<span class="c-fn">parse</span>(<span class="c-str">"genoma.fasta"</span>, <span class="c-str">"fasta"</span>):
-    seq = record.seq
-    gc = (seq.<span class="c-fn">count</span>(<span class="c-str">"G"</span>) + seq.<span class="c-fn">count</span>(<span class="c-str">"C"</span>)) / <span class="c-fn">len</span>(seq) * <span class="c-num">100</span>
-    <span class="c-fn">print</span>(<span class="c-str">f"{record.id}  GC: {gc:.2f}%"</span>)</code></pre>
-          </figure>
         </div>
       </div>
+
+      <ul class="hero-edge" aria-hidden="true">
+        <li data-i18n="hero.edge1">Biología</li>
+        <li data-i18n="hero.edge2">Datos</li>
+        <li data-i18n="hero.edge3">Código</li>
+        <li data-i18n="hero.edge4">Personas</li>
+        <li data-i18n="hero.edge5">Impacto</li>
+      </ul>
+
+      <p class="hero-quote" data-i18n="hero.quote">«Los datos también cuentan historias de vida»</p>
 
       <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar">
         <span data-i18n="hero.scroll">Scroll para explorar</span>
@@ -147,13 +157,6 @@
     <!-- ================= SOBRE MÍ ================= -->
     <section class="section" id="sobre-mi">
       <div class="container about-grid">
-        <div class="about-portrait">
-          <div class="portrait-frame">
-            <img src="assets/img/hilary-retrato.jpg" alt="Retrato de Hilary Suárez" loading="lazy" />
-          </div>
-          <p class="portrait-word" aria-hidden="true" data-i18n="about.portraitWord">Científica · Programadora · Costarricense</p>
-        </div>
-
         <div class="about-copy">
           <p class="kicker" data-i18n="about.kicker">Sobre mí</p>
           <h2 data-i18n="about.title">Ciencia, datos y personas</h2>
@@ -163,6 +166,21 @@
             <svg class="cr-flag" viewBox="0 0 30 18" width="22" height="13" role="img" aria-label="Costa Rica"><rect width="30" height="18" fill="#002b7f"/><rect y="3" width="30" height="12" fill="#fff"/><rect y="6" width="30" height="6" fill="#ce1126"/></svg>
           </p>
         </div>
+
+        <div class="about-portrait">
+          <div class="portrait-frame">
+            <img src="assets/img/hilary-retrato.jpg" alt="Retrato de Hilary Suárez" loading="lazy" />
+            <span class="portrait-sign" aria-hidden="true">
+              <span class="sign-name">Hilary Suárez</span>
+              <span class="sign-role" data-i18n="about.signRole">Científica · Programadora · Humana</span>
+            </span>
+          </div>
+        </div>
+
+        <aside class="about-values">
+          <p class="about-quote" data-i18n="about.quote">«Una ciencia más humana, abierta y colaborativa es posible.»</p>
+          <ul class="value-list" id="valueList"><!-- render: values --></ul>
+        </aside>
       </div>
 
       <div class="credentials container">
@@ -204,18 +222,53 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker" data-i18n="bio.kicker">Del dato biológico al conocimiento</p>
-          <h2 data-i18n="bio.title">Bioinformática</h2>
-          <p class="section-lead" data-i18n="bio.lead">Análisis genómico, transcriptómica y biología computacional para responder preguntas reales de salud.</p>
+          <h2 data-i18n="bio.title">De datos biológicos a descubrimientos</h2>
+          <p class="section-lead" data-i18n="bio.lead">Combino la bioinformática, la programación y el análisis de datos para responder preguntas reales de biología, salud y biotecnología.</p>
+        </div>
+
+        <div class="bio-feature">
+          <figure class="code-window">
+            <figcaption class="code-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="code-title">genomica.py</span>
+            </figcaption>
+            <pre class="code-body"><code><span class="c-com"># Analizando secuencias genómicas</span>
+<span class="c-kw">import</span> pandas <span class="c-kw">as</span> pd
+<span class="c-kw">from</span> Bio <span class="c-kw">import</span> SeqIO
+
+record_ids = []
+<span class="c-kw">for</span> record <span class="c-kw">in</span> SeqIO.<span class="c-fn">parse</span>(<span class="c-str">"genoma.fasta"</span>, <span class="c-str">"fasta"</span>):
+    seq = record.seq
+    gc = (seq.<span class="c-fn">count</span>(<span class="c-str">"G"</span>) + seq.<span class="c-fn">count</span>(<span class="c-str">"C"</span>)) / <span class="c-fn">len</span>(seq) * <span class="c-num">100</span>
+    record_ids.<span class="c-fn">append</span>((record.id, gc))
+
+<span class="c-fn">print</span>(<span class="c-str">"Procesamiento completado."</span>)</code></pre>
+          </figure>
+
+          <div class="bio3d bio3d-protein" data-bio3d="protein" data-src="assets/models/gfp-1ema.pdb" role="img" aria-label="Estructura tridimensional de la proteína verde fluorescente (GFP, PDB 1EMA), rotando">
+            <div class="bio3d-fallback" aria-hidden="true">
+              <svg viewBox="0 0 200 200"><defs><radialGradient id="protG" cx="45%" cy="40%" r="65%"><stop offset="0%" stop-color="#8affd0"/><stop offset="55%" stop-color="#2fb894"/><stop offset="100%" stop-color="#0c3a34"/></radialGradient></defs><circle cx="100" cy="100" r="72" fill="url(#protG)" opacity="0.9"/><g stroke="#0a1f1b" stroke-width="2.5" fill="none" opacity="0.5"><path d="M52 96c18-34 78-34 96 0M52 112c18 30 78 30 96 0M74 60c0 80 52 80 52 0"/></g></svg>
+            </div>
+            <p class="bio3d-tag" aria-hidden="true">GFP · PDB 1EMA</p>
+          </div>
         </div>
 
         <div class="genomic-viz" aria-hidden="true">
-          <div class="viz-head"><span data-i18n="bio.vizTitle">Análisis genómico</span><span class="viz-legend"><i class="l-genes"></i>Genes <i class="l-var"></i>Variantes <i class="l-cov"></i>Cobertura</span></div>
-          <svg class="viz-tracks" viewBox="0 0 600 150" preserveAspectRatio="none">
-            <polyline class="track track-genes" points="0,110 40,95 80,100 120,60 160,80 200,40 240,70 280,55 320,30 360,65 400,45 440,75 480,35 520,60 560,50 600,70" />
-            <polyline class="track track-var" points="0,130 40,120 80,128 120,105 160,118 200,95 240,120 280,110 320,90 360,115 400,100 440,122 480,95 520,112 560,105 600,120" />
-            <polyline class="track track-cov" points="0,90 40,70 80,85 120,45 160,65 200,25 240,55 280,40 320,15 360,50 400,30 440,60 480,20 520,45 560,35 600,55" />
+          <div class="viz-head"><span data-i18n="bio.vizTitle">Ciencia + código = impacto</span></div>
+          <svg class="viz-tracks" viewBox="0 0 600 160" preserveAspectRatio="none">
+            <path class="viz-wave viz-wave-2" d="M0,95 C50,45 100,45 150,95 C200,145 250,145 300,95 C350,45 400,45 450,95 C500,145 550,145 600,95" />
+            <path class="viz-wave viz-wave-1" d="M0,80 C50,25 100,135 150,80 C200,25 250,135 300,80 C350,25 400,135 450,80 C500,25 550,135 600,80" />
+            <g class="viz-bars">
+              <rect x="14"  y="120" width="7" height="26" /><rect x="42" y="108" width="7" height="38" /><rect x="70" y="126" width="7" height="20" />
+              <rect x="98"  y="96"  width="7" height="50" /><rect x="126" y="118" width="7" height="28" /><rect x="154" y="104" width="7" height="42" />
+              <rect x="182" y="128" width="7" height="18" /><rect x="210" y="100" width="7" height="46" /><rect x="238" y="114" width="7" height="32" />
+              <rect x="266" y="92"  width="7" height="54" /><rect x="294" y="122" width="7" height="24" /><rect x="322" y="106" width="7" height="40" />
+              <rect x="350" y="126" width="7" height="20" /><rect x="378" y="98"  width="7" height="48" /><rect x="406" y="116" width="7" height="30" />
+              <rect x="434" y="102" width="7" height="44" /><rect x="462" y="124" width="7" height="22" /><rect x="490" y="94"  width="7" height="52" />
+              <rect x="518" y="120" width="7" height="26" /><rect x="546" y="110" width="7" height="36" /><rect x="574" y="128" width="7" height="18" />
+            </g>
           </svg>
-          <div class="viz-scale"><span>0 kb</span><span>25 kb</span><span>50 kb</span><span>75 kb</span><span>100 kb</span></div>
+          <div class="viz-scale viz-bases"><span>A</span><span>T</span><span>G</span><span>C</span></div>
         </div>
 
         <div class="cards-grid" id="bioProjects"><!-- render: projects (area: bioinformatica) --></div>
