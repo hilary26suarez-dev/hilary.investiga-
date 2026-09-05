@@ -1,0 +1,20 @@
+# Render Blueprint — sitio estático (sin build)
+# Uso: Render Dashboard → New → Blueprint → conectá el repositorio.
+services:
+  - type: web
+    name: hilary-suarez-portafolio
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: ./
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400, must-revalidate
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

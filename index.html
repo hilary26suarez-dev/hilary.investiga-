@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hilary Suárez — Biotecnología, bioinformática y programación</title>
+  <meta name="description" content="Portafolio de Hilary Suárez: científica y programadora costarricense. Biotecnología, bioinformática y ciencia de datos aplicadas a la salud." />
+  <meta name="author" content="Hilary Suárez" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hilary Suárez — Ciencia, código e impacto" />
+  <meta property="og:description" content="Biotecnología, bioinformática y programación aplicadas a la ciencia." />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand" aria-label="Hilary Suárez — inicio">
+        <span class="brand-mark" aria-hidden="true">HS</span>
+        <span class="brand-text">
+          <span class="brand-name">Hilary Suárez</span>
+          <span class="brand-tagline" data-i18n="brand.tagline">Ciencia · Código · Impacto</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+          <li><a href="#sobre-mi" data-i18n="nav.sobreMi">Sobre mí</a></li>
+          <li><a href="#bioinformatica" data-i18n="nav.bioinformatica">Bioinformática</a></li>
+          <li><a href="#programacion" data-i18n="nav.programacion">Programación</a></li>
+          <li><a href="#investigacion" data-i18n="nav.investigacion">Investigación</a></li>
+          <li><a href="#medios" data-i18n="nav.medios">Medios</a></li>
+          <li><a href="#congresos" data-i18n="nav.congresos">Congresos</a></li>
+          <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Cambiar idioma">
+          <span class="lang-current">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema claro / oscuro">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm0-20a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1Zm10 11a1 1 0 0 1 1 1 1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1ZM3 12a1 1 0 0 1-1 1H1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm15.36 6.36 .7.7a1 1 0 0 1-1.4 1.42l-.71-.71a1 1 0 0 1 1.41-1.41ZM6.05 5.64a1 1 0 0 1-1.42 1.41l-.7-.7A1 1 0 0 1 5.34 4.94l.71.7Zm12.31-.7a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0ZM6.05 18.36a1 1 0 0 1 0 1.41l-.71.71a1 1 0 0 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0Z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <button class="icon-btn nav-burger" id="navBurger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="glow glow-teal"></div>
+        <div class="glow glow-violet"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker" data-i18n="hero.kicker">Ciencia sin fronteras, ideas con impacto</p>
+          <h1 class="hero-name">Hilary Suárez</h1>
+          <p class="hero-role" data-content="profile.role">Biotecnología, bioinformática y programación aplicadas a la ciencia.</p>
+          <p class="hero-lead" data-content="profile.heroLead"></p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#bioinformatica" data-i18n="hero.ctaProjects">Ver proyectos</a>
+            <a class="btn btn-ghost" href="#sobre-mi" data-i18n="hero.ctaAbout">Conocer mi trayectoria</a>
+          </div>
+
+          <ul class="hero-pills">
+            <li><strong data-i18n="hero.pill1a">Ciencia</strong><span data-i18n="hero.pill1b">que conecta</span></li>
+            <li><strong data-i18n="hero.pill2a">Datos</strong><span data-i18n="hero.pill2b">que inspiran</span></li>
+            <li><strong data-i18n="hero.pill3a">Personas</strong><span data-i18n="hero.pill3b">que transforman</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="dna-wrap">
+            <svg class="dna" viewBox="0 0 200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Hélice de ADN">
+              <defs>
+                <linearGradient id="dnaGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#5eead4" />
+                  <stop offset="50%" stop-color="#818cf8" />
+                  <stop offset="100%" stop-color="#4ade80" />
+                </linearGradient>
+              </defs>
+              <g class="dna-strands" stroke="url(#dnaGrad)" stroke-width="3" fill="none" stroke-linecap="round">
+                <path d="M60,0 C110,35 110,70 60,105 C10,140 10,175 60,210 C110,245 110,280 60,315 C10,350 10,385 60,420" />
+                <path d="M140,0 C90,35 90,70 140,105 C190,140 190,175 140,210 C90,245 90,280 140,315 C190,350 190,385 140,420" />
+              </g>
+              <g class="dna-rungs" stroke="url(#dnaGrad)" stroke-width="2.5" stroke-linecap="round">
+                <line x1="72" y1="18" x2="128" y2="18" /><line x1="92" y1="40" x2="108" y2="40" />
+                <line x1="72" y1="86" x2="128" y2="86" /><line x1="92" y1="64" x2="108" y2="64" />
+                <line x1="72" y1="122" x2="128" y2="122" /><line x1="92" y1="145" x2="108" y2="145" />
+                <line x1="72" y1="192" x2="128" y2="192" /><line x1="92" y1="168" x2="108" y2="168" />
+                <line x1="72" y1="228" x2="128" y2="228" /><line x1="92" y1="250" x2="108" y2="250" />
+                <line x1="72" y1="298" x2="128" y2="298" /><line x1="92" y1="272" x2="108" y2="272" />
+                <line x1="72" y1="334" x2="128" y2="334" /><line x1="92" y1="356" x2="108" y2="356" />
+                <line x1="72" y1="402" x2="128" y2="402" /><line x1="92" y1="380" x2="108" y2="380" />
+              </g>
+            </svg>
+          </div>
+
+          <figure class="code-window">
+            <figcaption class="code-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="code-title">genomica.py</span>
+            </figcaption>
+            <pre class="code-body"><code><span class="c-com"># Analizando secuencias genómicas</span>
+<span class="c-kw">import</span> biopython <span class="c-kw">as</span> bp
+<span class="c-kw">from</span> Bio <span class="c-kw">import</span> SeqIO
+
+<span class="c-kw">for</span> record <span class="c-kw">in</span> SeqIO.<span class="c-fn">parse</span>(<span class="c-str">"genoma.fasta"</span>, <span class="c-str">"fasta"</span>):
+    seq = record.seq
+    gc = (seq.<span class="c-fn">count</span>(<span class="c-str">"G"</span>) + seq.<span class="c-fn">count</span>(<span class="c-str">"C"</span>)) / <span class="c-fn">len</span>(seq) * <span class="c-num">100</span>
+    <span class="c-fn">print</span>(<span class="c-str">f"{record.id}  GC: {gc:.2f}%"</span>)</code></pre>
+          </figure>
+        </div>
+      </div>
+
+      <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar">
+        <span data-i18n="hero.scroll">Scroll para explorar</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 16 6 10l1.4-1.4L12 13.2l4.6-4.6L18 10z"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= SOBRE MÍ ================= -->
+    <section class="section" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="about-portrait">
+          <div class="portrait-frame">
+            <img src="assets/img/hilary-retrato.jpg" alt="Retrato de Hilary Suárez" loading="lazy" />
+          </div>
+          <p class="portrait-word" aria-hidden="true" data-i18n="about.portraitWord">Científica · Programadora · Costarricense</p>
+        </div>
+
+        <div class="about-copy">
+          <p class="kicker" data-i18n="about.kicker">Sobre mí</p>
+          <h2 data-i18n="about.title">Ciencia, datos y personas</h2>
+          <div class="about-text" data-content="profile.bio"></div>
+          <a class="btn btn-ghost" href="#investigacion" data-i18n="about.cta">Conoce más sobre mí</a>
+          <p class="about-roots"><span data-i18n="about.roots">Mis raíces también impulsan mi ciencia.</span>
+            <svg class="cr-flag" viewBox="0 0 30 18" width="22" height="13" role="img" aria-label="Costa Rica"><rect width="30" height="18" fill="#002b7f"/><rect y="3" width="30" height="12" fill="#fff"/><rect y="6" width="30" height="6" fill="#ce1126"/></svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="credentials container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="cred.kicker">Formación y credenciales</p>
+          <h3 data-i18n="cred.title">Trayectoria académica</h3>
+        </div>
+
+        <div class="cred-cols">
+          <div>
+            <h4 class="subhead" data-i18n="cred.eduTitle">Formación académica</h4>
+            <ol class="timeline timeline-sm" id="educationList"><!-- render: education --></ol>
+
+            <h4 class="subhead" data-i18n="cred.workTitle">Experiencia laboral</h4>
+            <ol class="timeline timeline-sm" id="workList"><!-- render: work --></ol>
+          </div>
+
+          <div>
+            <h4 class="subhead" data-i18n="cred.certTitle">Certificaciones y credenciales</h4>
+            <div class="cert-groups" id="certGroups"><!-- render: certifications --></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ÁREAS DE EXPERIENCIA ================= -->
+    <section class="section section-alt" id="areas">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="areas.kicker">Disciplina · Creatividad · Impacto</p>
+          <h2 data-i18n="areas.title">Áreas de experiencia</h2>
+        </div>
+        <div class="expertise-grid" id="expertiseGrid"><!-- render: expertise --></div>
+      </div>
+    </section>
+
+    <!-- ================= BIOINFORMÁTICA ================= -->
+    <section class="section" id="bioinformatica">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="bio.kicker">Del dato biológico al conocimiento</p>
+          <h2 data-i18n="bio.title">Bioinformática</h2>
+          <p class="section-lead" data-i18n="bio.lead">Análisis genómico, transcriptómica y biología computacional para responder preguntas reales de salud.</p>
+        </div>
+
+        <div class="genomic-viz" aria-hidden="true">
+          <div class="viz-head"><span data-i18n="bio.vizTitle">Análisis genómico</span><span class="viz-legend"><i class="l-genes"></i>Genes <i class="l-var"></i>Variantes <i class="l-cov"></i>Cobertura</span></div>
+          <svg class="viz-tracks" viewBox="0 0 600 150" preserveAspectRatio="none">
+            <polyline class="track track-genes" points="0,110 40,95 80,100 120,60 160,80 200,40 240,70 280,55 320,30 360,65 400,45 440,75 480,35 520,60 560,50 600,70" />
+            <polyline class="track track-var" points="0,130 40,120 80,128 120,105 160,118 200,95 240,120 280,110 320,90 360,115 400,100 440,122 480,95 520,112 560,105 600,120" />
+            <polyline class="track track-cov" points="0,90 40,70 80,85 120,45 160,65 200,25 240,55 280,40 320,15 360,50 400,30 440,60 480,20 520,45 560,35 600,55" />
+          </svg>
+          <div class="viz-scale"><span>0 kb</span><span>25 kb</span><span>50 kb</span><span>75 kb</span><span>100 kb</span></div>
+        </div>
+
+        <div class="cards-grid" id="bioProjects"><!-- render: projects (area: bioinformatica) --></div>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAMACIÓN ================= -->
+    <section class="section section-alt" id="programacion">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="prog.kicker">La biología también se programa</p>
+          <h2 data-i18n="prog.title">Programación</h2>
+          <p class="section-lead" data-i18n="prog.lead">Construyo herramientas, automatizo análisis y transformo ideas científicas en software.</p>
+        </div>
+
+        <h3 class="subhead" data-i18n="prog.skillsTitle">Habilidades técnicas</h3>
+        <div class="skills-wrap" id="skillsWrap"><!-- render: skills --></div>
+
+        <h3 class="subhead" data-i18n="prog.projectsTitle">Proyectos de software</h3>
+        <div class="cards-grid" id="progProjects"><!-- render: projects (area: programacion) --></div>
+      </div>
+    </section>
+
+    <!-- ================= INVESTIGACIÓN ================= -->
+    <section class="section" id="investigacion">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="research.kicker">Preguntas que mueven mi trabajo</p>
+          <h2 data-i18n="research.title">Investigación</h2>
+          <p class="section-lead" data-i18n="research.lead">Ciencia abierta, interdisciplinaria y con impacto en la sociedad.</p>
+        </div>
+
+        <div class="research-lines" id="researchLines"><!-- render: research --></div>
+
+        <div class="hospital-block">
+          <div class="section-head">
+            <p class="kicker" data-i18n="research.hospitalKicker">Ciencia con los pies en el hospital</p>
+            <h3 data-i18n="research.hospitalTitle">Práctica hospitalaria · Hospital México</h3>
+            <p class="hospital-meta" id="hospitalMeta"></p>
+            <p class="section-lead" data-content="hospital.summary"></p>
+            <ul class="chips hospital-rotations" id="hospitalRotations"><!-- render: hospital.rotations --></ul>
+          </div>
+          <div class="gallery" id="hospitalGallery"><!-- render: hospital.photos --></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEDIOS ================= -->
+    <section class="section section-alt" id="medios">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="media.kicker">Divulgación y presencia pública</p>
+          <h2 data-i18n="media.title">En los medios</h2>
+          <p class="section-lead" data-i18n="media.lead">Publicaciones, entrevistas y apariciones sobre mi trabajo y mis proyectos.</p>
+        </div>
+
+        <h3 class="subhead" data-i18n="media.videosTitle">Videos y entrevistas</h3>
+        <div class="video-grid" id="videoGrid"><!-- render: videos --></div>
+
+        <h3 class="subhead" data-i18n="media.pressTitle">Prensa y redes</h3>
+        <div class="press-grid" id="pressGrid"><!-- render: press --></div>
+
+        <h3 class="subhead" data-i18n="media.divulgacionTitle">Divulgación · Hilary ConCiencia</h3>
+        <div class="divulgacion" id="divulgacionBlock"><!-- render: media.divulgacion --></div>
+      </div>
+    </section>
+
+    <!-- ================= CONGRESOS ================= -->
+    <section class="section" id="congresos">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="congresos.kicker">Compartir la ciencia también es transformar realidades</p>
+          <h2 data-i18n="congresos.title">Congresos y presentaciones</h2>
+        </div>
+        <ol class="timeline" id="congresosTimeline"><!-- render: congresos --></ol>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="section section-alt" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="kicker" data-i18n="contact.kicker">Hablemos</p>
+          <h2 data-i18n="contact.title">Contacto</h2>
+          <p class="section-lead" data-i18n="contact.lead">¿Colaboración, charla o una pregunta científica? Escríbeme.</p>
+          <ul class="contact-links" id="contactLinks"><!-- render: profile.links --></ul>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            <span data-i18n="contact.fName">Nombre</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span data-i18n="contact.fEmail">Correo</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span data-i18n="contact.fMessage">Mensaje</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar mensaje</button>
+          <p class="form-note" data-i18n="contact.note">Se abrirá tu correo con el mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">HS</span>
+        <span>Hilary Suárez</span>
+      </div>
+      <p class="footer-tagline" data-i18n="footer.tagline">La ciencia es más poderosa cuando se comparte.</p>
+      <ul class="footer-social" id="footerSocial"><!-- render: profile.links (icons) --></ul>
+      <p class="footer-rights"><span data-i18n="footer.rights">Hecho con ciencia y código.</span> <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
