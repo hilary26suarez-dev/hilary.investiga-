@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=7" />
 
   <!-- three.js para los visores 3D (ADN / proteína); se importa bajo demanda -->
   <script type="importmap">
@@ -116,15 +116,24 @@
             <span class="hero-geo-coords">9.7489° N · 83.7534° W</span>
           </div>
 
-          <!-- elementos reales en capas, con profundidad al mover el mouse / hacer scroll -->
-          <div class="hero-parallax" id="heroParallax" aria-hidden="true">
-            <span class="pl-slot pl-back"><img class="parallax-layer" data-depth=".15" src="assets/img/elements/adn-03.png" alt="" loading="lazy" /></span>
-            <span class="pl-slot pl-chromosome"><img class="parallax-layer" data-depth=".55" src="assets/img/elements/cromosoma.png" alt="" loading="lazy" /></span>
-            <span class="pl-slot pl-main"><img class="parallax-layer" data-depth=".45" src="assets/img/elements/adn-01.png" alt="" loading="lazy" /></span>
-            <span class="pl-slot pl-enzyme-a"><img class="parallax-layer" data-depth=".7" src="assets/img/elements/enzima-01.png" alt="" loading="lazy" /></span>
-            <span class="pl-slot pl-enzyme-b"><img class="parallax-layer" data-depth=".85" src="assets/img/elements/enzima-02.png" alt="" loading="lazy" /></span>
+          <!-- ADN 3D real con three.js (misma librería y tratamiento que la proteína de Bioinformática) -->
+          <div class="bio3d bio3d-hero" data-bio3d="dna" role="img" aria-label="Doble hélice de ADN en 3D, rotando">
+            <div class="bio3d-fallback" aria-hidden="true">
+              <svg viewBox="0 0 200 420" preserveAspectRatio="xMidYMid meet">
+                <defs><linearGradient id="dnaGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#40e6b2" /><stop offset="55%" stop-color="#57c8ff" /><stop offset="100%" stop-color="#8affd0" />
+                </linearGradient></defs>
+                <g stroke="url(#dnaGrad)" stroke-width="3.2" fill="none" stroke-linecap="round">
+                  <path d="M60,0 C110,35 110,70 60,105 C10,140 10,175 60,210 C110,245 110,280 60,315 C10,350 10,385 60,420" />
+                  <path d="M140,0 C90,35 90,70 140,105 C190,140 190,175 140,210 C90,245 90,280 140,315 C190,350 190,385 140,420" />
+                </g>
+                <g stroke="url(#dnaGrad)" stroke-width="2.4" stroke-linecap="round" opacity="0.7">
+                  <line x1="72" y1="18" x2="128" y2="18" /><line x1="72" y1="86" x2="128" y2="86" /><line x1="72" y1="122" x2="128" y2="122" /><line x1="72" y1="192" x2="128" y2="192" /><line x1="72" y1="228" x2="128" y2="228" /><line x1="72" y1="298" x2="128" y2="298" /><line x1="72" y1="334" x2="128" y2="334" /><line x1="72" y1="402" x2="128" y2="402" />
+                </g>
+              </svg>
+            </div>
+            <p class="bio3d-tag" aria-hidden="true">Doble hélice · B-DNA · three.js</p>
           </div>
-          <p class="bio3d-tag hero-parallax-tag" aria-hidden="true">ADN · Cromosoma · Enzimas</p>
 
           <div class="hero-annotations">
             <figure class="code-float" aria-hidden="true">
@@ -413,8 +422,8 @@ record_ids = []
     </div>
   </footer>
 
-  <script src="assets/js/content.js"></script>
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/content.js?v=7"></script>
+  <script src="assets/js/i18n.js?v=7"></script>
+  <script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

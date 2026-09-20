@@ -206,8 +206,7 @@ window.CONTENT = {
       },
       tags: [ "IA", "Bioprospección fúngica", "Modelado climático", "Micobiota CR" ],
       links: [
-        { label: { es: "Ver proyecto", en: "View project" }, url: "https://www.myconexuscr.com/" },
-        { label: { es: "Carta de aceptación", en: "Acceptance letter" }, url: "assets/docs/aceptacion-biotecnologia-2026-myconexus.html" }
+        { label: { es: "Ver proyecto", en: "View project" }, url: "https://www.myconexuscr.com/" }
       ],
       image: "assets/img/proyecto-myconexus.png"
     }
@@ -352,8 +351,7 @@ window.CONTENT = {
       talk:  { es: "«MycoLab CR: an AI-powered fungal bioprospecting platform integrating climate modeling and enzymatic databases for Costa Rican mycobiota» (proyecto MycoNexus).",
                en: "“MycoLab CR: an AI-powered fungal bioprospecting platform integrating climate modeling and enzymatic databases for Costa Rican mycobiota” (MycoNexus project)." },
       date:  { es: "Octubre 2026", en: "October 2026" },
-      place: { es: "7–9 oct · IICA, San José, Costa Rica", en: "7–9 Oct · IICA, San José, Costa Rica" },
-      url: "assets/docs/aceptacion-biotecnologia-2026-myconexus.html"
+      place: { es: "7–9 oct · IICA, San José, Costa Rica", en: "7–9 Oct · IICA, San José, Costa Rica" }
     },
     {
       event: { es: "Microsoft Agents League Hackathon 2026", en: "Microsoft Agents League Hackathon 2026" },

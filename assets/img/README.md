@@ -13,13 +13,9 @@ Si querés cambiar alguna, reemplazá el archivo con **el mismo nombre**.
 | `divulgacion-1.jpg` | Fungi + Naturaleza · Hilary ConCiencia | *Amanita muscaria* — P.N. Volcán Irazú |
 | `divulgacion-2.jpg` | Fungi + Naturaleza · Hilary ConCiencia | Ficha *Coprinellus disseminatus* |
 | `divulgacion-3.jpg` | Fungi + Naturaleza · Hilary ConCiencia | «El verde no es del hongo» |
-| `elements/adn-01.png` | Hero · capa principal del ADN (paralaje) | ADN azul, estilo "cuentas" |
-| `elements/adn-02.png` | *(de repuesto, sin usar)* | ADN azul/dorado ornamentado |
-| `elements/adn-03.png` | Hero · capa de fondo con glow (paralaje) | ADN turquesa brillante |
-| `elements/adn-04.png` | *(de repuesto, sin usar)* | ADN turquesa, estilo "cuentas" |
-| `elements/cromosoma.png` | Hero · capa del cromosoma (paralaje) | Cromosoma azul en X |
-| `elements/enzima-01.png` | Hero · capa de enzima/proteína (paralaje) | Superficie molecular verde-violeta |
-| `elements/enzima-02.png` | Hero · capa de enzima/proteína (paralaje) | Superficie molecular violeta-verde |
+| `elements/adn-01.png` a `adn-04.png` | *(disponibles, sin usar — el hero ahora usa el ADN 3D de three.js)* | ADN azul/turquesa, varios estilos |
+| `elements/cromosoma.png` | *(disponible, sin usar)* | Cromosoma azul en X |
+| `elements/enzima-01.png` / `enzima-02.png` | *(disponibles, sin usar)* | Superficie molecular verde-violeta / violeta-verde |
 | `prensa-ucimed-1.jpg` | Prensa · tarjeta de Instagram | Story de UCIMED sobre tu proyecto |
 | `prensa-ucimed-2.jpg` | Prensa · tarjeta de LinkedIn | Story de UCIMED — Agents League Hackathon |
 | `og-image.jpg` | Vista previa al compartir el link | (captura anterior de VaccineGenics) |
@@ -30,14 +26,14 @@ Si querés cambiar alguna, reemplazá el archivo con **el mismo nombre**.
 > `hospital-1..4.jpg` ya no se usan (se borraron de `assets/img/`, pero seguís
 > teniéndolas en tu carpeta `fotos/`).
 
-## Cambiar las capas del hero (paralaje)
+## El ADN del hero
 
-Las 5 capas están en `index.html`, dentro de `<div class="hero-parallax">`.
-Cada una es una imagen envuelta en un `<span class="pl-slot ...">`, con
-`data-depth` (0 a 1: más alto = se mueve más, se siente más cerca). Para
-cambiar cuál ADN se usa de principal o de fondo, solo cambiá el `src` de
-`.pl-main` o `.pl-back` por `elements/adn-02.png` o `elements/adn-04.png`
-(los dos que quedaron de repuesto).
+El hero ya no usa imágenes en capas: es un modelo 3D real (three.js), la
+misma librería que arma la proteína de Bioinformática. Está en
+`assets/js/bio3d.js` (`buildDNA()`) y se monta en el `<div class="bio3d
+bio3d-hero" data-bio3d="dna">` de `index.html`. Las imágenes de
+`elements/` quedaron disponibles por si más adelante querés usarlas en
+otra sección (por ejemplo, Fungi).
 
 ## Cambiar fotos de divulgación
 

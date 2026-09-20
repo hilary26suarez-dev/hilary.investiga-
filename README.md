@@ -125,21 +125,31 @@ El archivo [`render.yaml`](render.yaml) permite crearlo como *Blueprint* sin toc
 ## Diseño: bosque nocturno + laboratorio
 
 Paleta verde bosque muy oscuro + esmeralda + musgo (sin azul/violeta "tech").
-El hero combina: nombre en serif editorial, tus imágenes reales de ADN /
-cromosoma / enzimas en capas con paralaje (se mueven distinto entre sí al
-mover el mouse o hacer scroll — código en [`assets/js/main.js`](assets/js/main.js),
-función `initParallax()`), un recuadro de código flotante, una secuencia de
-ADN, un widget tipo BLAST (Query/Sbjct/Identidad) y coordenadas de Costa Rica.
+El hero combina: nombre en serif editorial, una doble hélice de ADN 3D real
+(three.js, con glow y rotación reactiva al mouse/scroll — ver "Visores 3D"
+abajo), un recuadro de código flotante, una secuencia de ADN, un widget tipo
+BLAST (Query/Sbjct/Identidad) y coordenadas de Costa Rica.
 
-## Visores 3D (Bioinformática)
+## Visores 3D (Bioinformática + hero)
 
-- La **proteína GFP** de la sección Bioinformática es 3D real con
-  [three.js](https://threejs.org) (estructura `assets/models/gfp-1ema.pdb`,
-  PDB 1EMA), con degradado de color estilo "spectrum". Se carga desde CDN
-  sólo cuando entra en pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
-- Si no hay internet o WebGL, se muestra una ilustración de respaldo.
-- El ADN del hero usa tus imágenes reales (`assets/img/elements/`) en vez de
-  three.js — ver [assets/img/README.md](assets/img/README.md) para cambiarlas.
+- La **doble hélice del hero** y la **proteína GFP** de Bioinformática son
+  3D real con [three.js](https://threejs.org) (la proteína usa la estructura
+  `assets/models/gfp-1ema.pdb`, PDB 1EMA), con degradado de color estilo
+  "spectrum" y post-procesado de glow (bloom). Se cargan desde CDN sólo
+  cuando entran en pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
+- Ambos reaccionan al mouse (tilt) y al scroll (rotación/posición).
+- Si no hay internet o WebGL, se muestra una ilustración SVG de respaldo.
+- Hay imágenes reales de ADN/cromosoma/enzimas disponibles sin usar en
+  `assets/img/elements/` — ver [assets/img/README.md](assets/img/README.md).
+
+## Cache-busting
+
+`styles.css` y los `.js` se referencian con `?v=N` (por ejemplo
+`styles.css?v=7`) en `index.html` y en el `import()` dinámico de
+`bio3d.js` dentro de `assets/js/main.js`. Los headers de Vercel/Render
+ya no cachean `assets/*` de forma agresiva (`max-age=0, must-revalidate`),
+pero igual **subí el número `?v=N` cada vez que edites CSS o JS** para
+forzar que el navegador cargue la versión nueva.
 
 ## CV
 
