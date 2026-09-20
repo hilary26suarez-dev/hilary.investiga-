@@ -125,26 +125,21 @@ El archivo [`render.yaml`](render.yaml) permite crearlo como *Blueprint* sin toc
 ## Diseño: bosque nocturno + laboratorio
 
 Paleta verde bosque muy oscuro + esmeralda + musgo (sin azul/violeta "tech").
-El hero combina: nombre en serif editorial, la doble hélice 3D real, un
-recuadro de código flotante, una secuencia de ADN, un widget tipo BLAST
-(Query/Sbjct/Identidad), miniaturas circulares de tus fotos de hongos como
-"nodos" de una red, y coordenadas de Costa Rica — todo generado con CSS/SVG/
-three.js reales (no es una imagen). El ADN reacciona levemente al scroll.
+El hero combina: nombre en serif editorial, tus imágenes reales de ADN /
+cromosoma / enzimas en capas con paralaje (se mueven distinto entre sí al
+mover el mouse o hacer scroll — código en [`assets/js/main.js`](assets/js/main.js),
+función `initParallax()`), un recuadro de código flotante, una secuencia de
+ADN, un widget tipo BLAST (Query/Sbjct/Identidad) y coordenadas de Costa Rica.
 
-No es una réplica pixel-a-pixel de tu imagen de referencia (esa combina
-fotografía de bosque + renders 3D de proteínas compuestos a mano, algo que
-no puedo generar como imagen); se construyó la misma composición y paleta
-con elementos reales del sitio (three.js, tus fotos, texto).
+## Visores 3D (Bioinformática)
 
-## Visores 3D (hero y Bioinformática)
-
-- **Doble hélice de ADN** (hero) y **proteína GFP** (Bioinformática) son 3D reales
-  con [three.js](https://threejs.org), que se carga desde CDN sólo cuando entran en
-  pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
-- La proteína usa la estructura real `assets/models/gfp-1ema.pdb` (GFP, PDB 1EMA).
-- Ambos tienen degradado de color estilo "spectrum" (verde → turquesa → un toque
-  de violeta), como en los visores moleculares reales.
-- Si no hay internet o WebGL, se muestra una ilustración de respaldo — el sitio no se rompe.
+- La **proteína GFP** de la sección Bioinformática es 3D real con
+  [three.js](https://threejs.org) (estructura `assets/models/gfp-1ema.pdb`,
+  PDB 1EMA), con degradado de color estilo "spectrum". Se carga desde CDN
+  sólo cuando entra en pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
+- Si no hay internet o WebGL, se muestra una ilustración de respaldo.
+- El ADN del hero usa tus imágenes reales (`assets/img/elements/`) en vez de
+  three.js — ver [assets/img/README.md](assets/img/README.md) para cambiarlas.
 
 ## CV
 
@@ -163,7 +158,7 @@ un PDF, exportalo desde el navegador (Imprimir → Guardar como PDF) y enlazalo 
 │   ├── js/i18n.js              textos de interfaz ES/EN
 │   ├── js/main.js              lógica: render, idioma, tema, animaciones
 │   ├── js/bio3d.js             visores 3D (ADN / proteína) con three.js
-│   ├── img/                    tus fotos
+│   ├── img/                    tus fotos (+ img/elements/: capas del hero)
 │   ├── models/                 estructura PDB de la proteína
 │   └── docs/                   CV + resúmenes de congresos
 └── README.md

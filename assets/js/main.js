@@ -507,6 +507,50 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
+  /* Capas reales (ADN, cromosoma, enzimas) con profundidad al mover el mouse / hacer scroll */
+  function initParallax() {
+    var root = $("#heroParallax");
+    var layers = $$(".parallax-layer", root);
+    if (!root || !layers.length) return;
+
+    if (reduceMotion) return; // se queda quieto, sin animación
+
+    var target = { x: 0, y: 0 }, cur = { x: 0, y: 0 }, scrollT = 0, raf = 0;
+
+    function onMove(e) {
+      var r = root.getBoundingClientRect();
+      target.x = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      target.y = ((e.clientY - r.top) / r.height - 0.5) * 2;
+    }
+    function onLeave() { target.x = 0; target.y = 0; }
+    root.addEventListener("pointermove", onMove);
+    root.addEventListener("pointerleave", onLeave);
+
+    function onScroll() {
+      var r = root.getBoundingClientRect();
+      var vh = window.innerHeight || 800;
+      scrollT = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / (vh * 0.8)));
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    function tick(now) {
+      raf = requestAnimationFrame(tick);
+      cur.x += (target.x - cur.x) * 0.06;
+      cur.y += (target.y - cur.y) * 0.06;
+      layers.forEach(function (l) {
+        var depth = parseFloat(l.getAttribute("data-depth")) || 0.3;
+        var wobble = Math.sin(now * 0.0006 + depth * 9) * depth * 9;
+        var dx = cur.x * depth * 42;
+        var dy = cur.y * depth * 26 + scrollT * depth * -85 + wobble;
+        var rot = cur.x * depth * 5;
+        var sc = 1 + Math.abs(cur.x) * depth * 0.04;
+        l.style.transform = "translate3d(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px,0) rotate(" + rot.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
+      });
+    }
+    raf = requestAnimationFrame(tick);
+  }
+
   function initContactForm() {
     var form = $("#contactForm"); if (!form) return;
     form.addEventListener("submit", function (e) {
@@ -549,6 +593,7 @@
     initScrollSpy();
     initContactForm();
     initBio3D();
+    initParallax();
 
     var y = $("#year"); if (y) y.textContent = "© " + new Date().getFullYear();
   });
