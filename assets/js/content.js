@@ -14,13 +14,19 @@ window.CONTENT = {
     fullName: "Hilary Gretchan Suárez Fonseca",
 
     role: {
-      es: "Biotecnología, bioinformática y programación aplicadas a la ciencia.",
-      en: "Biotechnology, bioinformatics and programming applied to science."
+      es: "Biotecnología · Bioinformática · Programación científica",
+      en: "Biotechnology · Bioinformatics · Scientific programming"
+    },
+
+    // Frase fuerte del hero. El último tramo va resaltado (se permite HTML).
+    heroStatement: {
+      es: "Leo datos biológicos, programo soluciones y convierto preguntas científicas <span class=\"hl-accent\">en sistemas.</span>",
+      en: "I read biological data, program solutions and turn scientific questions <span class=\"hl-accent\">into systems.</span>"
     },
 
     heroLead: {
-      es: "Transformo datos biológicos en conocimiento. Combino programación y pensamiento científico para construir soluciones a desafíos reales de salud, y creo en una ciencia abierta, interdisciplinaria y con impacto en la sociedad.",
-      en: "I turn biological data into knowledge. I combine programming and scientific thinking to build solutions to real health challenges, and I believe in open, interdisciplinary science with real social impact."
+      es: "Genómica, enfermedades raras, biología computacional y exploración del mundo fungi. Ciencia, tecnología y naturaleza en un mismo sistema.",
+      en: "Genomics, rare diseases, computational biology and exploring the world of fungi. Science, technology and nature in a single system."
     },
 
     bio: {
@@ -45,6 +51,22 @@ window.CONTENT = {
       scholar:     ""    // PENDIENTE
     }
   },
+
+  /* ------------------------------------- LAS 4 DIMENSIONES (fila del hero) */
+  pillars: [
+    { icon: "dna",
+      title: { es: "Genómica", en: "Genomics" },
+      desc:  { es: "Datos que revelan vida.", en: "Data that reveals life." } },
+    { icon: "code",
+      title: { es: "Código", en: "Code" },
+      desc:  { es: "Lógica que construye.", en: "Logic that builds." } },
+    { icon: "pill",
+      title: { es: "Enfermedades raras", en: "Rare diseases" },
+      desc:  { es: "Soluciones para lo poco frecuente.", en: "Solutions for the uncommon." } },
+    { icon: "mushroom",
+      title: { es: "Fungi + Naturaleza", en: "Fungi + Nature" },
+      desc:  { es: "Ecosistemas que inspiran.", en: "Ecosystems that inspire." } }
+  ],
 
   /* ----------------------------------------- VALORES (sección «Sobre mí») */
   values: [
@@ -169,12 +191,18 @@ window.CONTENT = {
     {
       id: "myconexus",
       name: "MycoNexus",
+      founder: true, // se destaca aparte en la sección «Fungi + Naturaleza»
       areas: [ "bioinformatica", "programacion" ],
       context: { es: "Póster · Congreso Internacional de Biotecnología, Costa Rica 2026 (antes «MycoLab CR»)",
                  en: "Poster · International Biotechnology Congress, Costa Rica 2026 (formerly “MycoLab CR”)" },
       desc: {
         es: "Plataforma de bioprospección fúngica potenciada con IA que integra modelado climático y bases de datos enzimáticas para estudiar la micobiota de Costa Rica. Aceptada como póster en el área de Biotecnología Agrícola y Ambiental.",
         en: "An AI-powered fungal bioprospecting platform that integrates climate modeling and enzymatic databases to study Costa Rican mycobiota. Accepted as a poster in the Agricultural & Environmental Biotechnology track."
+      },
+      // Texto más largo para el módulo destacado de fundadora en «Fungi + Naturaleza».
+      spotlight: {
+        es: "Fundé MycoNexus para convertir mi curiosidad por los hongos de Costa Rica en una plataforma real: cruza biodiversidad, clima y bases de datos enzimáticas con inteligencia artificial para acelerar la bioprospección fúngica. Es donde mi identidad científica —bioinformática, programación y amor por la naturaleza— se junta en un solo sistema.",
+        en: "I founded MycoNexus to turn my curiosity about Costa Rican fungi into a real platform: it crosses biodiversity, climate and enzymatic databases with AI to accelerate fungal bioprospecting. It's where my scientific identity — bioinformatics, programming and a love for nature — comes together in one system."
       },
       tags: [ "IA", "Bioprospección fúngica", "Modelado climático", "Micobiota CR" ],
       links: [

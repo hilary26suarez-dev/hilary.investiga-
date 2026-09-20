@@ -94,7 +94,8 @@
     globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
     open: '<path d="M4 7a2 2 0 0 1 2-2h5v14H6a2 2 0 0 0-2 2V7Z"/><path d="M20 7a2 2 0 0 0-2-2h-5v14h5a2 2 0 0 1 2 2V7Z"/>',
     spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="3"/>',
-    women: '<circle cx="12" cy="7" r="4"/><path d="M12 11v8M9 16h6"/>'
+    women: '<circle cx="12" cy="7" r="4"/><path d="M12 11v8M9 16h6"/>',
+    mushroom: '<path d="M4 11c0-4.5 3.6-8 8-8s8 3.5 8 8c0 1-.8 1.5-1.7 1.5H5.7C4.8 12.5 4 12 4 11Z"/><path d="M9.5 13v5a2.5 2.5 0 0 0 5 0v-5"/>'
   };
   function svg(name, size) {
     return '<svg viewBox="0 0 24 24" width="' + (size || 20) + '" height="' + (size || 20) +
@@ -148,6 +149,19 @@
     });
   }
 
+  function renderPillars() {
+    var g = $("#heroPillars"); if (!g) return; clear(g);
+    (C.pillars || []).forEach(function (p) {
+      g.appendChild(el("li", {},
+        el("span", { class: "hp-ico", html: svg(p.icon, 18) }),
+        el("span", { class: "hp-body" },
+          el("strong", { text: pick(p.title) }),
+          el("span", { text: pick(p.desc) })
+        )
+      ));
+    });
+  }
+
   function renderSkills() {
     var w = $("#skillsWrap"); if (!w) return; clear(w);
     (C.skills || []).forEach(function (s) {
@@ -185,6 +199,28 @@
     var g = $(sel); if (!g) return; clear(g);
     (C.projects || []).filter(function (p) { return (p.areas || []).indexOf(area) > -1; })
       .forEach(function (p) { g.appendChild(projectCard(p)); });
+  }
+
+  function renderFounderSpotlight() {
+    var g = $("#founderSpotlight"); if (!g) return; clear(g);
+    var p = (C.projects || []).find(function (x) { return x.founder; });
+    if (!p) return;
+    var links = (p.links || []).map(function (l) {
+      return el("a", { class: "card-link", href: l.url, target: "_blank", rel: "noopener",
+        html: pick(l.label) + " " + svg("external", 14) });
+    });
+    var tags = (p.tags || []).map(function (tg) { return el("span", { class: "tag", text: tg }); });
+    g.appendChild(el("div", { class: "founder-media reveal" },
+      imgEl(p.image, p.name, p.name)
+    ));
+    g.appendChild(el("div", { class: "founder-body reveal" },
+      el("p", { class: "founder-eyebrow", text: t("fungi.founderEyebrow") }),
+      el("h3", { text: p.name }),
+      el("p", { class: "founder-context", text: pick(p.context) }),
+      el("p", { class: "founder-text", text: pick(p.spotlight || p.desc) }),
+      el("div", { class: "tag-row" }, tags),
+      links.length ? el("div", { class: "card-links" }, links) : null
+    ));
   }
 
   function renderResearch() {
@@ -371,9 +407,9 @@
   }
 
   function renderAll() {
-    renderValues(); renderAreas(); renderSkills();
+    renderPillars(); renderValues(); renderAreas(); renderSkills();
     renderProjects("bioinformatica", "#bioProjects");
-    renderResearch();
+    renderResearch(); renderFounderSpotlight();
     renderVideos(); renderPress(); renderDivulgacion(); renderCongresos();
     renderEducation(); renderWork(); renderCerts();
     renderContactLinks(); renderFooterSocial();

@@ -23,6 +23,31 @@ function addTube(parent, pts, radius, hex, emissive) {
   });
   parent.add(new THREE.Mesh(geo, mat));
 }
+/* tubo con degradado de color a lo largo (estilo "spectrum" de visores moleculares) */
+function addGradientTube(parent, pts, radius, hexStops, emissiveHex, emissiveIntensity) {
+  const curve = new THREE.CatmullRomCurve3(pts, false, "catmullrom", 0.15);
+  const segs = Math.max(48, pts.length * 10);
+  const geo = new THREE.TubeGeometry(curve, segs, radius, 16, false);
+  const stops = hexStops.map((c) => new THREE.Color(c));
+  const n = stops.length - 1;
+  const pos = geo.attributes.position;
+  const buf = new Float32Array(pos.count * 3);
+  const tmp = new THREE.Color();
+  for (let i = 0; i < pos.count; i++) {
+    const tt = i / (pos.count - 1);
+    const seg = Math.min(n - 1, Math.floor(tt * n));
+    const localT = tt * n - seg;
+    tmp.copy(stops[seg]).lerp(stops[seg + 1], localT);
+    buf[i * 3] = tmp.r; buf[i * 3 + 1] = tmp.g; buf[i * 3 + 2] = tmp.b;
+  }
+  geo.setAttribute("color", new THREE.BufferAttribute(buf, 3));
+  const mat = new THREE.MeshStandardMaterial({
+    vertexColors: true, color: 0xffffff, roughness: 0.32, metalness: 0.0,
+    emissive: emissiveHex == null ? 0x2fe6ad : emissiveHex,
+    emissiveIntensity: emissiveIntensity == null ? 1.2 : emissiveIntensity
+  });
+  parent.add(new THREE.Mesh(geo, mat));
+}
 function addBeads(parent, pts, r, hex) {
   const g = new THREE.SphereGeometry(r, 16, 16);
   const m = new THREE.MeshStandardMaterial({ color: hex, emissive: hex, emissiveIntensity: 1.05, roughness: 0.3 });
@@ -61,8 +86,9 @@ function buildDNA(model) {
     const t2 = t + Math.PI * 0.76; // surco mayor / menor
     B.push(new THREE.Vector3(Math.cos(t2) * R, y, Math.sin(t2) * R));
   }
-  addTube(model, A, 0.5, 0x3fe6b2, 1.3);
-  addTube(model, B, 0.5, 0x57c8ff, 1.15);
+  // degradado tipo "spectrum" (verde bosque -> esmeralda -> turquesa -> un toque de violeta en la punta)
+  addGradientTube(model, A, 0.5, [0x2fa876, 0x3fe6b2, 0x57c8ff], 0x2fe6a8, 1.25);
+  addGradientTube(model, B, 0.5, [0x3fe6b2, 0x57c8ff, 0x9b8cf0], 0x57c8ff, 1.05);
   addBeads(model, A, 0.62, 0x8affd0);
   addBeads(model, B, 0.62, 0x9fe0ff);
   addRungs(model, A, B, 0xbff3e4);
@@ -222,14 +248,24 @@ export async function mountBio3D(container, opts) {
   }
   if (!REDUCED) container.addEventListener("pointermove", onPointer);
 
+  // el modelo reacciona sutilmente al scroll: gira y se desplaza mientras viajás por la página
+  let scrollT = 0;
+  function onScroll() {
+    const r = container.getBoundingClientRect();
+    const vh = window.innerHeight || 800;
+    scrollT = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / (vh * 0.7)));
+  }
+  if (!REDUCED) { window.addEventListener("scroll", onScroll, { passive: true }); onScroll(); }
+
   function frame(now) {
     raf = requestAnimationFrame(frame);
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
-    model.rotation.y += (kind === "dna" ? 0.36 : 0.26) * dt;
+    model.rotation.y += (kind === "dna" ? 0.36 : 0.26) * dt + scrollT * 0.01;
     tilt.x += (tilt.ty - tilt.x) * 0.05;
     tilt.y += (tilt.tx - tilt.y) * 0.05;
     model.rotation.x = 0.16 + tilt.x + Math.sin(now * 0.00018) * 0.04;
-    model.position.y = Math.sin(now * 0.0006) * radius0 * 0.015;
+    model.position.y = Math.sin(now * 0.0006) * radius0 * 0.015 - scrollT * radius0 * 0.1;
+    model.scale.setScalar(1 - Math.abs(scrollT) * 0.05);
     dust.rotation.y -= 0.02 * dt;
     composer.render();
   }
@@ -254,6 +290,7 @@ export async function mountBio3D(container, opts) {
     destroy() {
       stop(); io.disconnect(); ro.disconnect();
       container.removeEventListener("pointermove", onPointer);
+      window.removeEventListener("scroll", onScroll);
       renderer.dispose(); if (composer.dispose) composer.dispose();
       renderer.domElement.remove();
       container.classList.remove("bio3d-ready");

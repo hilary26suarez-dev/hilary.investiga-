@@ -29,18 +29,20 @@ Luego abrí `http://localhost:8000`.
 Ahí están, en un solo lugar y en los dos idiomas:
 
 - tus datos y bio
+- las 4 dimensiones del hero (Genómica · Código · Enfermedades raras · Fungi + Naturaleza) → `pillars`
 - áreas de experiencia
 - habilidades
 - proyectos (VaccineGenics, NeuroHunter PRO, MycoNexus) — cada uno con foto real y link a la app en vivo
 - líneas de investigación
-- medios: videos y entrevistas (YouTube, TV/Instagram), prensa (UCIMED) y la serie de divulgación «Hilary ConCiencia»
+- **Fungi + Naturaleza**: el módulo de fundadora de MycoNexus (`projects[].spotlight`) + la galería de divulgación «Hilary ConCiencia»
+- medios: videos y entrevistas (YouTube, TV/Instagram), prensa (UCIMED)
 - congresos (COMPAC 2026 + Biotecnología CR 2026 + hackathon)
 - formación académica, experiencia laboral y certificaciones
 
-Los proyectos aparecen **una sola vez**, en la sección Bioinformática (antes
-también se repetían en Programación; eso ya se corrigió). La práctica en el
-Hospital México se quitó del sitio (seguís teniendo esas fotos en `fotos/` por
-si las querés en otro lado).
+Los proyectos aparecen **una sola vez**, en la sección Bioinformática. La
+práctica en el Hospital México se quitó del sitio. La sección **Fungi +
+Naturaleza** (nueva) le da a MycoNexus su propio módulo como plataforma que
+fundaste, y agrupa ahí la divulgación de hongos (antes estaba dentro de Medios).
 
 Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dato tuyo.
 
@@ -48,7 +50,6 @@ Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dat
 
 | Dónde | Qué falta |
 |---|---|
-| `media.videos[2].image` | Foto de la entrevista de Canal 13 → guardala como `assets/img/entrevista-canal13.jpg` |
 | `media.videos[2].date` | Fecha de la entrevista de Canal 13, si la tenés |
 | `projects[].links` | Repos de GitHub de cada proyecto, si querés enlazarlos |
 | `profile.links.youtube` | Tu canal de YouTube, si tenés uno (opcional) |
@@ -56,11 +57,12 @@ Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dat
 Ya están puestos: LinkedIn, GitHub, Instagram, ORCID · los tres links a tus apps
 en vivo (VaccineGenics, NeuroHunter, MycoNexus) · los congresos reales con fechas
 · el **DOI 10.5281/zenodo.22089990** del trabajo de MPS II · las fechas de los
-videos de YouTube.
+videos de YouTube · la foto de la entrevista de Canal 13.
 
-**Fotos:** las capturas reales de los 3 proyectos y las fotos de divulgación /
-prensa ya están integradas. Detalle en [assets/img/README.md](assets/img/README.md).
-La carpeta `fotos/` con los originales podés borrarla cuando quieras.
+**Fotos:** las capturas reales de los 3 proyectos, la foto de Canal 13 y las
+fotos de divulgación / prensa ya están integradas. Detalle en
+[assets/img/README.md](assets/img/README.md). La carpeta `fotos/` con los
+originales podés borrarla cuando quieras.
 
 **Documentos de congresos** (en `assets/docs/`, enlazados desde Congresos y
 Proyectos):
@@ -120,12 +122,28 @@ El archivo [`render.yaml`](render.yaml) permite crearlo como *Blueprint* sin toc
 
 ---
 
+## Diseño: bosque nocturno + laboratorio
+
+Paleta verde bosque muy oscuro + esmeralda + musgo (sin azul/violeta "tech").
+El hero combina: nombre en serif editorial, la doble hélice 3D real, un
+recuadro de código flotante, una secuencia de ADN, un widget tipo BLAST
+(Query/Sbjct/Identidad), miniaturas circulares de tus fotos de hongos como
+"nodos" de una red, y coordenadas de Costa Rica — todo generado con CSS/SVG/
+three.js reales (no es una imagen). El ADN reacciona levemente al scroll.
+
+No es una réplica pixel-a-pixel de tu imagen de referencia (esa combina
+fotografía de bosque + renders 3D de proteínas compuestos a mano, algo que
+no puedo generar como imagen); se construyó la misma composición y paleta
+con elementos reales del sitio (three.js, tus fotos, texto).
+
 ## Visores 3D (hero y Bioinformática)
 
 - **Doble hélice de ADN** (hero) y **proteína GFP** (Bioinformática) son 3D reales
   con [three.js](https://threejs.org), que se carga desde CDN sólo cuando entran en
   pantalla. Código: [`assets/js/bio3d.js`](assets/js/bio3d.js).
 - La proteína usa la estructura real `assets/models/gfp-1ema.pdb` (GFP, PDB 1EMA).
+- Ambos tienen degradado de color estilo "spectrum" (verde → turquesa → un toque
+  de violeta), como en los visores moleculares reales.
 - Si no hay internet o WebGL, se muestra una ilustración de respaldo — el sitio no se rompe.
 
 ## CV
