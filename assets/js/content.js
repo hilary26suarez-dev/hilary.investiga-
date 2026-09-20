@@ -78,8 +78,8 @@ window.CONTENT = {
 
     { icon: "flask",
       title: { es: "Laboratorio clínico", en: "Clinical laboratory" },
-      desc:  { es: "Procesamiento de muestras, hematología y bioseguridad. Práctica en el Hospital México.",
-               en: "Sample processing, hematology and biosafety. Practice at Hospital México." } },
+      desc:  { es: "Procesamiento de muestras, hematología y bioseguridad en práctica clínica.",
+               en: "Sample processing, hematology and biosafety in clinical practice." } },
 
     { icon: "megaphone",
       title: { es: "Divulgación científica", en: "Science communication" },
@@ -142,10 +142,11 @@ window.CONTENT = {
       },
       tags: [ "Multi-agente", "Farmacogenómica", "IA", "Python" ],
       links: [
+        { label: { es: "Ver proyecto", en: "View project" }, url: "https://vaccinegenics-dbzefqukskjcbuuwkptufn.streamlit.app/" },
         { label: { es: "Ver video (UCIMED)", en: "Watch video (UCIMED)" }, url: "https://youtu.be/XEth1ZDuGMg" }
         // { label: { es: "Repositorio", en: "Repository" }, url: "PENDIENTE" }
       ],
-      image: "assets/img/proyecto-vaccinegenics.jpg"
+      image: "assets/img/proyecto-vaccinegenics.png"
     },
     {
       id: "neurohunter",
@@ -159,10 +160,11 @@ window.CONTENT = {
       },
       tags: [ "MPS II", "Biomarcadores", "AlphaFold2", "Machine learning" ],
       links: [
+        { label: { es: "Ver proyecto", en: "View project" }, url: "https://svxwwwvs5ydtprxjyf557a.streamlit.app/" },
         { label: { es: "Resumen · COMPAC 2026", en: "Abstract · COMPAC 2026" }, url: "assets/docs/abstract-compac-2026-mps-ii.html" },
         { label: { es: "DOI: 10.5281/zenodo.22089990", en: "DOI: 10.5281/zenodo.22089990" }, url: "https://doi.org/10.5281/zenodo.22089990" }
       ],
-      image: "assets/img/proyecto-neurohunter.jpg"
+      image: "assets/img/proyecto-neurohunter.png"
     },
     {
       id: "myconexus",
@@ -176,9 +178,10 @@ window.CONTENT = {
       },
       tags: [ "IA", "Bioprospección fúngica", "Modelado climático", "Micobiota CR" ],
       links: [
+        { label: { es: "Ver proyecto", en: "View project" }, url: "https://www.myconexuscr.com/" },
         { label: { es: "Carta de aceptación", en: "Acceptance letter" }, url: "assets/docs/aceptacion-biotecnologia-2026-myconexus.html" }
       ],
-      image: "assets/img/proyecto-myconexus.jpg"
+      image: "assets/img/proyecto-myconexus.png"
     }
   ],
 
@@ -194,43 +197,8 @@ window.CONTENT = {
 
     { title: { es: "Bioprospección y biotecnología ambiental", en: "Bioprospecting & environmental biotech" },
       body:  { es: "Descubrimiento de enzimas fúngicas de interés industrial cruzando datos biológicos, climáticos y geográficos (MycoNexus).",
-               en: "Discovering industrially relevant fungal enzymes by crossing biological, climate and geographic data (MycoNexus)." } },
-
-    { title: { es: "Laboratorio clínico e investigación traslacional", en: "Clinical lab & translational research" },
-      body:  { es: "Del hospital al dato: rotación de 4 meses por el Laboratorio Clínico del Hospital México (hematología, banco de sangre, parasitología, química clínica, tuberculosis) y formación en buenas prácticas clínicas (GCP).",
-               en: "From bedside to data: a 4-month rotation through the Clinical Laboratory of Hospital México (hematology, blood bank, parasitology, clinical chemistry, tuberculosis) and Good Clinical Practice (GCP) training." } }
+               en: "Discovering industrially relevant fungal enzymes by crossing biological, climate and geographic data (MycoNexus)." } }
   ],
-
-  /* --------------------------------------------- PRÁCTICA HOSPITALARIA / HOSPITAL */
-  hospital: {
-    place: "Hospital México (CCSS), San José",
-    role: { es: "Práctica profesional clínica · Laboratorio Clínico",
-            en: "Clinical professional practice · Clinical Laboratory" },
-    period: { es: "Rotación de 4 meses · Diplomado en Laboratorio Clínico (Plerus / ULICORI) · Colegiada ante el CMQCCR",
-              en: "4-month rotation · Diploma in Clinical Laboratory Science (Plerus / ULICORI) · Licensed by CMQCCR" },
-    summary: {
-      es: "Rotación de cuatro meses por el Laboratorio Clínico del Hospital México (CCSS), pasando por distintos servicios: atención en preconsulta y toma de muestras (flebotomía), Emergencias, Banco de Sangre, Parasitología, Química Clínica, Hematología y el Departamento de Tuberculosis (baciloscopía / BK). Trabajo directo con pacientes bajo bioseguridad, técnica aséptica y control de calidad.",
-      en: "A four-month rotation through the Clinical Laboratory of Hospital México (CCSS), across several services: pre-consultation care and blood sampling (phlebotomy), Emergency, Blood Bank, Parasitology, Clinical Chemistry, Hematology and the Tuberculosis Department (smear microscopy / AFB). Direct patient contact under biosafety, aseptic technique and quality control."
-    },
-    // Servicios por los que rotó (se muestran como chips).
-    rotations: [
-      { es: "Preconsulta", en: "Pre-consultation" },
-      { es: "Toma de muestras / flebotomía", en: "Blood sampling / phlebotomy" },
-      { es: "Emergencias", en: "Emergency" },
-      { es: "Banco de Sangre", en: "Blood Bank" },
-      { es: "Parasitología", en: "Parasitology" },
-      { es: "Química Clínica", en: "Clinical Chemistry" },
-      { es: "Hematología", en: "Hematology" },
-      { es: "Tuberculosis (BK / baciloscopía)", en: "Tuberculosis (AFB smear)" }
-    ],
-    // Poné tus fotos en assets/img/ con estos nombres. Quitá las que no uses.
-    photos: [
-      { src: "assets/img/hospital-1.jpg", alt: { es: "Hilary en el laboratorio clínico del Hospital México", en: "Hilary in the clinical laboratory at Hospital México" } },
-      { src: "assets/img/hospital-2.jpg", alt: { es: "Procesamiento de muestras biológicas", en: "Processing biological samples" } },
-      { src: "assets/img/hospital-3.jpg", alt: { es: "Práctica hospitalaria en el laboratorio", en: "Hospital laboratory practice" } },
-      { src: "assets/img/hospital-4.jpg", alt: { es: "Trabajo de laboratorio clínico", en: "Clinical laboratory work" } }
-    ]
-  },
 
   /* ---------------------------------------------------------------- MEDIOS */
   media: {
@@ -252,6 +220,17 @@ window.CONTENT = {
         youtubeId: "XEth1ZDuGMg",
         source: { es: "UCIMED", en: "UCIMED" },
         date: { es: "25 de agosto de 2026", en: "August 25, 2026" }
+      },
+      {
+        title: { es: "Entrevista en Canal 13 · «Su Lado Positivo»",
+                 en: "Interview on Canal 13 · “Su Lado Positivo”" },
+        desc:  { es: "Conversación en televisión sobre su trabajo en biotecnología, bioinformática y programación aplicada a la ciencia.",
+                 en: "A television conversation about her work in biotechnology, bioinformatics and programming applied to science." },
+        platform: "instagram",
+        url: "https://www.instagram.com/reel/DdhGz_WRHI-/",
+        image: "assets/img/entrevista-canal13.jpg",
+        source: { es: "Canal 13", en: "Canal 13" }
+        // date: PENDIENTE — agregá la fecha de la entrevista si la tenés
       }
     ],
 

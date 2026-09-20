@@ -59,13 +59,10 @@ window.I18N = {
     "prog.title": "Programación",
     "prog.lead": "Construyo herramientas, automatizo análisis y transformo ideas científicas en software.",
     "prog.skillsTitle": "Habilidades técnicas",
-    "prog.projectsTitle": "Proyectos de software",
 
     "research.kicker": "Preguntas que mueven mi trabajo",
     "research.title": "Investigación",
     "research.lead": "Ciencia abierta, interdisciplinaria y con impacto en la sociedad.",
-    "research.hospitalKicker": "Ciencia con los pies en el hospital",
-    "research.hospitalTitle": "Práctica hospitalaria · Hospital México",
 
     "media.kicker": "Divulgación y presencia pública",
     "media.title": "En los medios",
@@ -154,13 +151,10 @@ window.I18N = {
     "prog.title": "Programming",
     "prog.lead": "I build tools, automate analysis and turn scientific ideas into software.",
     "prog.skillsTitle": "Technical skills",
-    "prog.projectsTitle": "Software projects",
 
     "research.kicker": "Questions that drive my work",
     "research.title": "Research",
     "research.lead": "Open, interdisciplinary science with real social impact.",
-    "research.hospitalKicker": "Science with its feet in the hospital",
-    "research.hospitalTitle": "Hospital practice · Hospital México",
 
     "media.kicker": "Outreach and public presence",
     "media.title": "In the media",

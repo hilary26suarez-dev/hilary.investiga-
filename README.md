@@ -31,12 +31,16 @@ Ahí están, en un solo lugar y en los dos idiomas:
 - tus datos y bio
 - áreas de experiencia
 - habilidades
-- proyectos (VaccineGenics, NeuroHunter PRO, MycoNexus)
+- proyectos (VaccineGenics, NeuroHunter PRO, MycoNexus) — cada uno con foto real y link a la app en vivo
 - líneas de investigación
-- práctica en el Hospital México + fotos
-- medios: videos de YouTube, prensa (UCIMED) y la serie de divulgación «Hilary ConCiencia»
-- congresos (COMPAC 2026 + hackathon)
+- medios: videos y entrevistas (YouTube, TV/Instagram), prensa (UCIMED) y la serie de divulgación «Hilary ConCiencia»
+- congresos (COMPAC 2026 + Biotecnología CR 2026 + hackathon)
 - formación académica, experiencia laboral y certificaciones
+
+Los proyectos aparecen **una sola vez**, en la sección Bioinformática (antes
+también se repetían en Programación; eso ya se corrigió). La práctica en el
+Hospital México se quitó del sitio (seguís teniendo esas fotos en `fotos/` por
+si las querés en otro lado).
 
 Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dato tuyo.
 
@@ -44,17 +48,18 @@ Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dat
 
 | Dónde | Qué falta |
 |---|---|
+| `media.videos[2].image` | Foto de la entrevista de Canal 13 → guardala como `assets/img/entrevista-canal13.jpg` |
+| `media.videos[2].date` | Fecha de la entrevista de Canal 13, si la tenés |
 | `projects[].links` | Repos de GitHub de cada proyecto, si querés enlazarlos |
 | `profile.links.youtube` | Tu canal de YouTube, si tenés uno (opcional) |
 
-Ya están puestos: LinkedIn, GitHub, Instagram, ORCID · los dos congresos reales
-con fechas (COMPAC 2026 y Congreso Internacional de Biotecnología CR 2026) · el
-**DOI 10.5281/zenodo.22089990** del trabajo de MPS II · las fechas de los dos
-videos · la práctica de 4 meses en el Hospital México con sus servicios.
+Ya están puestos: LinkedIn, GitHub, Instagram, ORCID · los tres links a tus apps
+en vivo (VaccineGenics, NeuroHunter, MycoNexus) · los congresos reales con fechas
+· el **DOI 10.5281/zenodo.22089990** del trabajo de MPS II · las fechas de los
+videos de YouTube.
 
-**Fotos:** ya están integradas (16 fotos de tu carpeta `fotos/`, repartidas en
-retrato, proyectos, práctica en el Hospital México, prensa de UCIMED y la serie
-de divulgación «Hilary ConCiencia»). Detalle en [assets/img/README.md](assets/img/README.md).
+**Fotos:** las capturas reales de los 3 proyectos y las fotos de divulgación /
+prensa ya están integradas. Detalle en [assets/img/README.md](assets/img/README.md).
 La carpeta `fotos/` con los originales podés borrarla cuando quieras.
 
 **Documentos de congresos** (en `assets/docs/`, enlazados desde Congresos y

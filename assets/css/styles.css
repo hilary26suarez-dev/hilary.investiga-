@@ -746,44 +746,6 @@ body.nav-open .nav-burger span:nth-child(3) { transform: translateY(-6px) rotate
 .research-card h4 { font-size: 1.08rem; margin: 8px 0; }
 .research-card p { color: var(--text-dim); font-size: .92rem; }
 
-.hospital-block { margin-top: clamp(50px, 7vw, 84px); }
-.hospital-block .section-head { margin-bottom: 30px; }
-.hospital-meta {
-  margin-top: 12px;
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  color: var(--accent);
-  letter-spacing: .02em;
-}
-.hospital-rotations { margin-top: 18px; max-width: 60ch; }
-
-/* --------------------------------------------------------------- GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
-}
-.gal-item {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  aspect-ratio: 1 / 1;
-  background: var(--surface-2);
-}
-.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
-.gal-item:hover img { transform: scale(1.06); }
-.gal-item figcaption {
-  position: absolute; inset: auto 0 0 0;
-  padding: 26px 14px 12px;
-  font-size: .78rem;
-  color: #f2f6fb;
-  background: linear-gradient(transparent, rgba(4, 8, 14, .82));
-  opacity: 0; transform: translateY(8px);
-  transition: .3s;
-}
-.gal-item:hover figcaption { opacity: 1; transform: translateY(0); }
-
 /* ---------------------------------------------------------------- MEDIA */
 .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-bottom: 12px; }
 .video-card {
@@ -805,6 +767,34 @@ body.nav-open .nav-burger span:nth-child(3) { transform: translateY(-6px) rotate
 .yt:hover::after { background: rgba(4, 8, 14, .12); }
 .yt-play { position: relative; z-index: 1; transition: transform .25s var(--ease); filter: drop-shadow(0 6px 14px rgba(0,0,0,.4)); }
 .yt:hover .yt-play { transform: scale(1.08); }
+
+/* tarjeta de video externo (no-YouTube: Instagram, etc.) */
+.yt-external {
+  background-image: none;
+  background:
+    radial-gradient(120% 140% at 20% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    linear-gradient(135deg, var(--bg-soft), var(--bg-alt));
+}
+.yt-external img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.yt-ext-ico { position: relative; z-index: 1; color: var(--accent); opacity: .85; }
+.yt-ext-badge {
+  position: relative; z-index: 1;
+  display: grid; place-items: center;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  color: var(--accent-ink);
+  background: var(--accent);
+  transition: transform .25s var(--ease);
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.4));
+}
+.yt-external.has-photo .yt-ext-badge {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+}
+.yt-external:hover .yt-ext-badge { transform: scale(1.08); }
+.yt-external.has-photo .yt-ext-badge:hover,
+.yt-external.has-photo:hover .yt-ext-badge { transform: translate(-50%, -50%) scale(1.08); }
+.yt-external:not(.has-photo) { display: flex; flex-direction: column; gap: 14px; }
+
 .video-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 7px; }
 .video-src { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-mute); }
 .video-body h4 { font-size: 1.05rem; }

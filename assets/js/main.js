@@ -198,28 +198,6 @@
     });
   }
 
-  function renderHospital() {
-    var meta = $("#hospitalMeta");
-    if (meta) {
-      var parts = [deep(C, "hospital.place"), pick(deep(C, "hospital.period"))].filter(Boolean);
-      meta.textContent = parts.join("  ·  ");
-    }
-    var rot = $("#hospitalRotations");
-    if (rot) {
-      clear(rot);
-      (deep(C, "hospital.rotations") || []).forEach(function (r) {
-        rot.appendChild(el("li", { text: pick(r) }));
-      });
-    }
-    var g = $("#hospitalGallery"); if (!g) return; clear(g);
-    (deep(C, "hospital.photos") || []).forEach(function (ph, i) {
-      g.appendChild(el("figure", { class: "gal-item reveal" },
-        imgEl(ph.src, pick(ph.alt), "HOSPITAL " + (i + 1)),
-        el("figcaption", { text: pick(ph.alt) })
-      ));
-    });
-  }
-
   function ytFacade(id, title) {
     var wrap = el("button", { class: "yt", type: "button", "aria-label": t("ui.watch") + ": " + title });
     wrap.style.backgroundImage = "url(https://i.ytimg.com/vi/" + id + "/hqdefault.jpg)";
@@ -235,16 +213,30 @@
     return wrap;
   }
 
+  function externalFacade(v) {
+    var label = pick(v.title);
+    var a = el("a", { class: "yt yt-external", href: v.url, target: "_blank", rel: "noopener", "aria-label": t("ui.watch") + ": " + label });
+    if (v.image) {
+      a.classList.add("has-photo");
+      a.appendChild(imgEl(v.image, label, label));
+    } else {
+      a.appendChild(el("span", { class: "yt-ext-ico", html: svg(v.platform || "web", 34) }));
+    }
+    a.appendChild(el("span", { class: "yt-ext-badge", html: svg("external", 22) }));
+    return a;
+  }
+
   function renderVideos() {
     var g = $("#videoGrid"); if (!g) return; clear(g);
     (deep(C, "media.videos") || []).forEach(function (v) {
+      var watchUrl = v.youtubeId ? ("https://youtu.be/" + v.youtubeId) : v.url;
       g.appendChild(el("article", { class: "video-card reveal" },
-        el("div", { class: "video-frame" }, ytFacade(v.youtubeId, pick(v.title))),
+        el("div", { class: "video-frame" }, v.youtubeId ? ytFacade(v.youtubeId, pick(v.title)) : externalFacade(v)),
         el("div", { class: "video-body" },
           el("p", { class: "video-src", text: pick(v.source) + (v.date ? " · " + pick(v.date) : "") }),
           el("h4", { text: pick(v.title) }),
           el("p", { class: "video-desc", text: pick(v.desc) }),
-          el("a", { class: "card-link", href: "https://youtu.be/" + v.youtubeId, target: "_blank", rel: "noopener",
+          el("a", { class: "card-link", href: watchUrl, target: "_blank", rel: "noopener",
             html: t("ui.watch") + " " + svg("external", 14) })
         )
       ));
@@ -381,8 +373,7 @@
   function renderAll() {
     renderValues(); renderAreas(); renderSkills();
     renderProjects("bioinformatica", "#bioProjects");
-    renderProjects("programacion", "#progProjects");
-    renderResearch(); renderHospital();
+    renderResearch();
     renderVideos(); renderPress(); renderDivulgacion(); renderCongresos();
     renderEducation(); renderWork(); renderCerts();
     renderContactLinks(); renderFooterSocial();
