@@ -10,9 +10,8 @@ Si querés cambiar alguna, reemplazá el archivo con **el mismo nombre**.
 | `proyecto-neurohunter.png` | Proyecto NeuroHunter PRO | Captura real de la app (Streamlit) |
 | `proyecto-myconexus.png` | Proyecto MycoNexus | Captura real del sitio (myconexuscr.com) |
 | `entrevista-canal13.jpg` | Medios · entrevista Canal 13 | Vos en el set de «Su Lado Positivo» |
-| `divulgacion-1.jpg` | Fungi + Naturaleza · Hilary ConCiencia | *Amanita muscaria* — P.N. Volcán Irazú |
-| `divulgacion-2.jpg` | Fungi + Naturaleza · Hilary ConCiencia | Ficha *Coprinellus disseminatus* |
-| `divulgacion-3.jpg` | Fungi + Naturaleza · Hilary ConCiencia | «El verde no es del hongo» |
+| `divulgacion-1.jpg` | Fungi + Naturaleza · Hilary.investiga | *Amanita muscaria* — P.N. Volcán Irazú |
+| `divulgacion-2.jpg` | Fungi + Naturaleza · Hilary.investiga | Ficha *Coprinellus disseminatus* |
 | `elements/adn-01.png` a `adn-04.png` | *(disponibles, sin usar — el hero ahora usa el ADN 3D de three.js)* | ADN azul/turquesa, varios estilos |
 | `elements/cromosoma.png` | *(disponible, sin usar)* | Cromosoma azul en X |
 | `elements/enzima-01.png` / `enzima-02.png` | *(disponibles, sin usar)* | Superficie molecular verde-violeta / violeta-verde |

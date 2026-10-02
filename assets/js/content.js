@@ -37,11 +37,12 @@ window.CONTENT = {
     location: { es: "San José, Costa Rica", en: "San José, Costa Rica" },
     email: "hilary26suarez@gmail.com",
     emailInst: "hilary.suarezf@ucimed.ac.cr",
-    // phone: se omite a propósito (el repo es público). Si querés mostrarlo, agregalo acá.
+    // WhatsApp está en links.whatsapp (es público: el repo y el sitio lo muestran).
 
     // Poné aquí tus URL completas. Dejá "" para ocultar el ícono.
     links: {
       email:       "mailto:hilary26suarez@gmail.com",
+      whatsapp:    "https://wa.me/50670213255",   // +506 7021-3255
       linkedin:    "https://www.linkedin.com/in/hilary-su%C3%A1rez-fonseca-6bb5761b6/",
       instagram:   "https://www.instagram.com/hilary.investiga/",
       orcid:       "https://orcid.org/0009-0005-8697-5179",
@@ -105,8 +106,8 @@ window.CONTENT = {
 
     { icon: "megaphone",
       title: { es: "Divulgación científica", en: "Science communication" },
-      desc:  { es: "«Hilary ConCiencia»: biotecnología y genética explicadas para todas las personas.",
-               en: "“Hilary ConCiencia”: biotech and genetics explained for everyone." } }
+      desc:  { es: "«Hilary.investiga»: biotecnología y genética explicadas para todas las personas.",
+               en: "“Hilary.investiga”: biotech and genetics explained for everyone." } }
   ],
 
   /* ----------------------------------------------------- HABILIDADES / SKILLS */
@@ -196,15 +197,15 @@ window.CONTENT = {
       context: { es: "Póster · Congreso Internacional de Biotecnología, Costa Rica 2026 (antes «MycoLab CR»)",
                  en: "Poster · International Biotechnology Congress, Costa Rica 2026 (formerly “MycoLab CR”)" },
       desc: {
-        es: "Plataforma de bioprospección fúngica potenciada con IA que integra modelado climático y bases de datos enzimáticas para estudiar la micobiota de Costa Rica. Aceptada como póster en el área de Biotecnología Agrícola y Ambiental.",
-        en: "An AI-powered fungal bioprospecting platform that integrates climate modeling and enzymatic databases to study Costa Rican mycobiota. Accepted as a poster in the Agricultural & Environmental Biotechnology track."
+        es: "Plataforma de bioprospección fúngica potenciada con IA que integra modelado climático y bases de datos enzimáticas para estudiar la micobiota de Costa Rica. Incluye los registros de campo de mis expediciones fúngicas. Aceptada como póster en el área de Biotecnología Agrícola y Ambiental.",
+        en: "An AI-powered fungal bioprospecting platform that integrates climate modeling and enzymatic databases to study Costa Rican mycobiota. It includes the field records from my fungal expeditions. Accepted as a poster in the Agricultural & Environmental Biotechnology track."
       },
       // Texto más largo para el módulo destacado de fundadora en «Fungi + Naturaleza».
       spotlight: {
-        es: "Fundé MycoNexus para convertir mi curiosidad por los hongos de Costa Rica en una plataforma real: cruza biodiversidad, clima y bases de datos enzimáticas con inteligencia artificial para acelerar la bioprospección fúngica. Es donde mi identidad científica —bioinformática, programación y amor por la naturaleza— se junta en un solo sistema.",
-        en: "I founded MycoNexus to turn my curiosity about Costa Rican fungi into a real platform: it crosses biodiversity, climate and enzymatic databases with AI to accelerate fungal bioprospecting. It's where my scientific identity — bioinformatics, programming and a love for nature — comes together in one system."
+        es: "Fundé MycoNexus para convertir mi curiosidad por los hongos de Costa Rica en una plataforma real: cruza biodiversidad, clima y bases de datos enzimáticas con inteligencia artificial para acelerar la bioprospección fúngica. Es donde mi identidad científica —bioinformática, programación y amor por la naturaleza— se junta en un solo sistema. Además hago expediciones fúngicas por Costa Rica (Volcán Irazú, Volcán Arenal y más) y publico cada especie que encuentro en el catálogo de MycoNexus como registro de campo: con fotos, coordenadas, fecha y su identificación morfológica, declarada como sin verificar en laboratorio.",
+        en: "I founded MycoNexus to turn my curiosity about Costa Rican fungi into a real platform: it crosses biodiversity, climate and enzymatic databases with AI to accelerate fungal bioprospecting. It's where my scientific identity — bioinformatics, programming and a love for nature — comes together in one system. I also go on fungal expeditions across Costa Rica (Irazú Volcano, Arenal Volcano and more) and publish every species I find in the MycoNexus catalog as a field record: with photos, coordinates, date and its morphological identification, flagged as not yet lab-verified."
       },
-      tags: [ "IA", "Bioprospección fúngica", "Modelado climático", "Micobiota CR" ],
+      tags: [ "IA", "Bioprospección fúngica", "Expediciones fúngicas", "Modelado climático", "Micobiota CR" ],
       links: [
         { label: { es: "Ver proyecto", en: "View project" }, url: "https://www.myconexuscr.com/" }
       ],
@@ -253,9 +254,7 @@ window.CONTENT = {
                  en: "Interview on Canal 13 · “Su Lado Positivo”" },
         desc:  { es: "Conversación en televisión sobre su trabajo en biotecnología, bioinformática y programación aplicada a la ciencia.",
                  en: "A television conversation about her work in biotechnology, bioinformatics and programming applied to science." },
-        platform: "instagram",
-        url: "https://www.instagram.com/reel/DdhGz_WRHI-/",
-        image: "assets/img/entrevista-canal13.jpg",
+        youtubeId: "gqNoa968HFM",
         source: { es: "Canal 13", en: "Canal 13" }
         // date: PENDIENTE — agregá la fecha de la entrevista si la tenés
       }
@@ -306,13 +305,13 @@ window.CONTENT = {
       }
     ],
 
-    /* Divulgación científica — «Hilary ConCiencia» / @hilary.investiga */
+    /* Divulgación científica — @hilary.investiga */
     divulgacion: {
       handle: "@hilary.investiga",
       url: "https://www.instagram.com/hilary.investiga/",
       blurb: {
-        es: "«Hilary ConCiencia» es mi archivo fotográfico personal de hongos de Costa Rica: cada hallazgo con su grupo morfológico, nivel de certeza y qué falta para confirmarlo. Documentar es conservar; fotos con datos, no con suposiciones.",
-        en: "“Hilary ConCiencia” is my personal photographic archive of Costa Rican fungi: every find with its morphological group, confidence level and what's still needed to confirm it. To document is to conserve; photos with data, not assumptions."
+        es: "«Hilary.investiga» es mi archivo fotográfico personal de hongos de Costa Rica: cada hallazgo con su grupo morfológico, nivel de certeza y qué falta para confirmarlo. Documentar es conservar; fotos con datos, no con suposiciones.",
+        en: "“Hilary.investiga” is my personal photographic archive of Costa Rican fungi: every find with its morphological group, confidence level and what's still needed to confirm it. To document is to conserve; photos with data, not assumptions."
       },
       posts: [
         { src: "assets/img/divulgacion-1.jpg",
@@ -320,10 +319,7 @@ window.CONTENT = {
                  en: "Amanita muscaria photographed in Irazú Volcano National Park" } },
         { src: "assets/img/divulgacion-2.jpg",
           alt: { es: "Ficha de posible Coprinellus disseminatus",
-                 en: "Field card for a possible Coprinellus disseminatus" } },
-        { src: "assets/img/divulgacion-3.jpg",
-          alt: { es: "«El verde no es del hongo»: repisas de Trametes colonizadas por algas",
-                 en: "“The green isn't the fungus”: Trametes brackets colonised by algae" } }
+                 en: "Field card for a possible Coprinellus disseminatus" } }
       ]
     }
   },

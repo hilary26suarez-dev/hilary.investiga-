@@ -68,7 +68,7 @@ window.I18N = {
     "fungi.title": "Fungi + Naturaleza",
     "fungi.lead": "El micelio conecta el bosque igual que una red conecta datos. Los ecosistemas naturales y los sistemas computacionales no son tan distintos: ambos son redes que intercambian información para sostener algo vivo.",
     "fungi.founderEyebrow": "Fundadora",
-    "fungi.divulgacionTitle": "Divulgación · Hilary ConCiencia",
+    "fungi.divulgacionTitle": "Divulgación · Hilary.investiga",
 
     "media.kicker": "Divulgación y presencia pública",
     "media.title": "En los medios",
@@ -165,7 +165,7 @@ window.I18N = {
     "fungi.title": "Fungi + Nature",
     "fungi.lead": "Mycelium connects the forest the same way a network connects data. Natural ecosystems and computational systems aren't so different: both are networks that exchange information to sustain something alive.",
     "fungi.founderEyebrow": "Founder",
-    "fungi.divulgacionTitle": "Outreach · Hilary ConCiencia",
+    "fungi.divulgacionTitle": "Outreach · Hilary.investiga",
 
     "media.kicker": "Outreach and public presence",
     "media.title": "In the media",

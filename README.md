@@ -34,7 +34,7 @@ Ahí están, en un solo lugar y en los dos idiomas:
 - habilidades
 - proyectos (VaccineGenics, NeuroHunter PRO, MycoNexus) — cada uno con foto real y link a la app en vivo
 - líneas de investigación
-- **Fungi + Naturaleza**: el módulo de fundadora de MycoNexus (`projects[].spotlight`) + la galería de divulgación «Hilary ConCiencia»
+- **Fungi + Naturaleza**: el módulo de fundadora de MycoNexus (`projects[].spotlight`) + la galería de divulgación «Hilary.investiga»
 - medios: videos y entrevistas (YouTube, TV/Instagram), prensa (UCIMED)
 - congresos (COMPAC 2026 + Biotecnología CR 2026 + hackathon)
 - formación académica, experiencia laboral y certificaciones

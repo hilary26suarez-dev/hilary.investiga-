@@ -83,6 +83,7 @@
     flask: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3M7.5 15h9"/>',
     megaphone: '<path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1ZM14 8a4 4 0 0 1 0 8M17 5a8 8 0 0 1 0 14"/>',
     email: '<path d="M3 6h18v12H3zM3 7l9 6 9-6"/>',
+    whatsapp: '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a5 5 0 0 1-2.3-2.3l.8-1-1-2L9 8.5Z"/>',
     instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>',
     linkedin: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/>',
     github: '<path d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.3 3.6 5.3 3.9 5.3 3.9a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.9 10.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/>',
@@ -378,8 +379,8 @@
 
   function socialItems() {
     var links = deep(C, "profile.links") || {};
-    var order = ["email", "linkedin", "github", "instagram", "youtube", "orcid", "researchgate", "scholar"];
-    var labels = { email: "Email", linkedin: "LinkedIn", github: "GitHub", instagram: "Instagram",
+    var order = ["email", "whatsapp", "linkedin", "github", "instagram", "youtube", "orcid", "researchgate", "scholar"];
+    var labels = { email: "Email", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", instagram: "Instagram",
       youtube: "YouTube", orcid: "ORCID", researchgate: "ResearchGate", scholar: "Google Scholar" };
     return order.filter(function (k) { return links[k]; }).map(function (k) {
       return { key: k, url: links[k], label: labels[k], icon: ICON[k] ? k : "web" };
