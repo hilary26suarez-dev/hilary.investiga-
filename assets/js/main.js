@@ -318,8 +318,9 @@
   function renderCongresos() {
     var g = $("#congresosTimeline"); if (!g) return; clear(g);
     (C.congresos || []).forEach(function (c) {
-      g.appendChild(el("li", { class: "tl-item reveal" },
+      g.appendChild(el("li", { class: "tl-item reveal" + (c.photo ? " has-photo" : "") },
         el("span", { class: "tl-date", text: pick(c.date) }),
+        c.photo ? el("figure", { class: "tl-photo" }, imgEl(c.photo, pick(c.photoAlt), pick(c.event))) : null,
         el("div", { class: "tl-body" },
           el("h4", { text: pick(c.event) }),
           el("p", { class: "tl-role", text: pick(c.role) }),

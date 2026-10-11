@@ -14,3 +14,6 @@ node_modules/
 
 # Fotos originales sin optimizar (ya están copiadas en assets/img/)
 fotos/
+
+# Fotos de congresos originales (versiones optimizadas en assets/img/)
+congresos/

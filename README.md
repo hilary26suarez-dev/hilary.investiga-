@@ -32,7 +32,7 @@ Ahí están, en un solo lugar y en los dos idiomas:
 - las 4 dimensiones del hero (Genómica · Código · Enfermedades raras · Fungi + Naturaleza) → `pillars`
 - áreas de experiencia
 - habilidades
-- proyectos (VaccineGenics, NeuroHunter PRO, MycoNexus) — cada uno con foto real y link a la app en vivo
+- proyectos (VaccineGenics, Neuro-Hunter, MycoNexus) — cada uno con foto real y link a la app en vivo
 - líneas de investigación
 - **Fungi + Naturaleza**: el módulo de fundadora de MycoNexus (`projects[].spotlight`) + la galería de divulgación «Hilary.investiga»
 - medios: videos y entrevistas (YouTube, TV/Instagram), prensa (UCIMED)
@@ -55,7 +55,7 @@ Cada texto tiene versión `es:` y `en:`. Donde dice **`PENDIENTE`** falta un dat
 | `profile.links.youtube` | Tu canal de YouTube, si tenés uno (opcional) |
 
 Ya están puestos: LinkedIn, GitHub, Instagram, ORCID · los tres links a tus apps
-en vivo (VaccineGenics, NeuroHunter, MycoNexus) · los congresos reales con fechas
+en vivo (VaccineGenics, Neuro-Hunter, MycoNexus) · los congresos reales con fechas
 · el **DOI 10.5281/zenodo.22089990** del trabajo de MPS II · las fechas de los
 videos de YouTube · la foto de la entrevista de Canal 13.
 

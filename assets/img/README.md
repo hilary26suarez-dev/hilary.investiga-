@@ -7,8 +7,8 @@ Si querés cambiar alguna, reemplazá el archivo con **el mismo nombre**.
 |---|---|---|
 | `hilary-retrato.jpg` | «Sobre mí» (retrato) | Vos en bata, laboratorio |
 | `proyecto-vaccinegenics.png` | Proyecto VaccineGenics | Captura real de la app (Streamlit) |
-| `proyecto-neurohunter.png` | Proyecto NeuroHunter PRO | Captura real de la app (Streamlit) |
-| `proyecto-myconexus.png` | Proyecto MycoNexus | Captura real del sitio (myconexuscr.com) |
+| `proyecto-neurohunter.png` | Proyecto Neuro-Hunter | Captura real de la app (Streamlit) |
+| `proyecto-myconexus.png` | Proyecto MycoNexus | Captura real del sitio de MycoNexus |
 | `entrevista-canal13.jpg` | Medios · entrevista Canal 13 | Vos en el set de «Su Lado Positivo» |
 | `divulgacion-1.jpg` | Fungi + Naturaleza · Hilary.investiga | *Amanita muscaria* — P.N. Volcán Irazú |
 | `divulgacion-2.jpg` | Fungi + Naturaleza · Hilary.investiga | Ficha *Coprinellus disseminatus* |

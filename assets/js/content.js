@@ -173,19 +173,20 @@ window.CONTENT = {
     },
     {
       id: "neurohunter",
-      name: "NeuroHunter PRO",
+      name: "Neuro-Hunter v3.2",
       areas: [ "bioinformatica", "programacion" ],
-      context: { es: "Framework de investigación · en proceso de protección de propiedad intelectual",
-                 en: "Research framework · IP protection in progress" },
+      context: { es: "Documentación y corrección de una circularidad estructural en la generación de cohortes sintéticas para enfermedades raras. El caso de la mucopolisacaridosis tipo II",
+                 en: "Documenting and correcting a structural circularity in synthetic cohort generation for rare diseases. The case of mucopolysaccharidosis type II" },
       desc: {
-        es: "Framework para la estratificación fenotípica temprana de la Mucopolisacaridosis tipo II (síndrome de Hunter): integra biomarcadores del SNC, predicción estructural de variantes del gen IDS y aprendizaje automático. Presentado como revisión narrativa 2018–2026 en el COMPAC 2026 (póster).",
-        en: "A framework for early phenotypic stratification of Mucopolysaccharidosis type II (Hunter syndrome): it integrates CNS biomarkers, structural prediction of IDS gene variants and machine learning. Presented as a 2018–2026 narrative review at COMPAC 2026 (poster)."
+        es: "Framework de código abierto para la estratificación fenotípica de la MPS II (síndrome de Hunter). En una revisión interna detecté que el generador de cohortes sintéticas derivaba el fenotipo de los mismos biomarcadores usados para predecirlo, lo que inflaba la exactitud al 96–99 %. Al invertir el orden causal (primero el fenotipo latente, luego los biomarcadores con ruido), la exactitud bajó a 87,0–88,3 % (AUC 0,907–0,924): no es un peor modelo, es un sesgo eliminado. La utilidad clínica requerirá validación con cohortes reales.",
+        en: "An open-source framework for phenotypic stratification of MPS II (Hunter syndrome). In an internal review I found that the synthetic cohort generator derived the phenotype from the same biomarkers used to predict it, inflating accuracy to 96–99%. Reversing the causal order (latent phenotype first, then noisy biomarkers) brought accuracy down to 87.0–88.3% (AUC 0.907–0.924): not a worse model, but a bias removed. Clinical utility will require validation with real cohorts."
       },
-      tags: [ "MPS II", "Biomarcadores", "AlphaFold2", "Machine learning" ],
+      tags: [ "MPS II", "Cohortes sintéticas", "Biomarcadores", "Machine learning", "Código abierto" ],
       links: [
         { label: { es: "Ver proyecto", en: "View project" }, url: "https://svxwwwvs5ydtprxjyf557a.streamlit.app/" },
+        { label: { es: "Resumen · v3.2", en: "Abstract · v3.2" }, url: "assets/docs/resumen-neuro-hunter-v3-2.html" },
         { label: { es: "Resumen · COMPAC 2026", en: "Abstract · COMPAC 2026" }, url: "assets/docs/abstract-compac-2026-mps-ii.html" },
-        { label: { es: "DOI: 10.5281/zenodo.22089990", en: "DOI: 10.5281/zenodo.22089990" }, url: "https://doi.org/10.5281/zenodo.22089990" }
+        { label: { es: "Código v3.1.2 · DOI 10.5281/zenodo.22089990", en: "Code v3.1.2 · DOI 10.5281/zenodo.22089990" }, url: "https://doi.org/10.5281/zenodo.22089990" }
       ],
       image: "assets/img/proyecto-neurohunter.png"
     },
@@ -194,8 +195,8 @@ window.CONTENT = {
       name: "MycoNexus",
       founder: true, // se destaca aparte en la sección «Fungi + Naturaleza»
       areas: [ "bioinformatica", "programacion" ],
-      context: { es: "Póster · Congreso Internacional de Biotecnología, Costa Rica 2026 (antes «MycoLab CR»)",
-                 en: "Poster · International Biotechnology Congress, Costa Rica 2026 (formerly “MycoLab CR”)" },
+      context: { es: "Póster · Congreso Internacional de Biotecnología, Costa Rica 2026",
+                 en: "Poster · International Biotechnology Congress, Costa Rica 2026" },
       desc: {
         es: "Plataforma de bioprospección fúngica potenciada con IA que integra modelado climático y bases de datos enzimáticas para estudiar la micobiota de Costa Rica. Incluye los registros de campo de mis expediciones fúngicas. Aceptada como póster en el área de Biotecnología Agrícola y Ambiental.",
         en: "An AI-powered fungal bioprospecting platform that integrates climate modeling and enzymatic databases to study Costa Rican mycobiota. It includes the field records from my fungal expeditions. Accepted as a poster in the Agricultural & Environmental Biotechnology track."
@@ -207,7 +208,9 @@ window.CONTENT = {
       },
       tags: [ "IA", "Bioprospección fúngica", "Expediciones fúngicas", "Modelado climático", "Micobiota CR" ],
       links: [
-        { label: { es: "Ver proyecto", en: "View project" }, url: "https://www.myconexuscr.com/" }
+        // Sin enlace directo al sitio: quien quiera conocerlo la contacta primero por WhatsApp.
+        { label: { es: "Conocer MycoNexus · escribime por WhatsApp", en: "Learn about MycoNexus · message me on WhatsApp" },
+          url: "https://wa.me/50670213255?text=" + encodeURIComponent("Hola Hilary, me gustaría conocer MycoNexus.") }
       ],
       image: "assets/img/proyecto-myconexus.png"
     }
@@ -220,8 +223,8 @@ window.CONTENT = {
                en: "Can DNA predict how a person will respond to a vaccine? I work on immune-response simulation and computational analysis (VaccineGenics)." } },
 
     { title: { es: "Enfermedades raras y variantes genéticas", en: "Rare diseases & genetic variants" },
-      body:  { es: "Predicción de desenlaces terapéuticos en el Síndrome de Hunter (MPS II) mediante modelado computacional (NeuroHunter PRO).",
-               en: "Predicting therapeutic outcomes in Hunter Syndrome (MPS II) through computational modeling (NeuroHunter PRO)." } },
+      body:  { es: "Predicción de desenlaces terapéuticos en el Síndrome de Hunter (MPS II) mediante modelado computacional (Neuro-Hunter).",
+               en: "Predicting therapeutic outcomes in Hunter Syndrome (MPS II) through computational modeling (Neuro-Hunter)." } },
 
     { title: { es: "Bioprospección y biotecnología ambiental", en: "Bioprospecting & environmental biotech" },
       body:  { es: "Descubrimiento de enzimas fúngicas de interés industrial cruzando datos biológicos, climáticos y geográficos (MycoNexus).",
@@ -331,23 +334,27 @@ window.CONTENT = {
                en: "COMPAC 2026 · 19th Congress of Microbiology, Parasitology and Clinical Chemistry" },
       role:  { es: "Póster · Autora principal y de correspondencia",
                en: "Poster · Lead and corresponding author" },
-      talk:  { es: "«Avances en la estratificación fenotípica temprana de la Mucopolisacaridosis tipo II: biomarcadores del SNC, predicción estructural con inteligencia artificial y aprendizaje automático — revisión narrativa 2018–2026».",
-               en: "“Advances in early phenotypic stratification of Mucopolysaccharidosis type II: CNS biomarkers, structural prediction with AI and machine learning — narrative review 2018–2026”." },
+      talk:  { es: "«Estratificación fenotípica temprana en mucopolisacaridosis tipo II: arquitectura computacional multimodal sobre cohortes sintéticas».",
+               en: "“Early phenotypic stratification in mucopolysaccharidosis type II: a multimodal computational architecture on synthetic cohorts”." },
       date:  { es: "Octubre 2026", en: "October 2026" },
       place: { es: "8–10 oct · Centro de Convenciones de Costa Rica, San José", en: "8–10 Oct · Costa Rica Convention Center, San José" },
       doi: "10.5281/zenodo.22089990",
       // El resumen está en assets/docs/ como página HTML; cambiá a .pdf si guardás el PDF oficial.
-      url: "assets/docs/abstract-compac-2026-mps-ii.html"
+      url: "assets/docs/abstract-compac-2026-mps-ii.html",
+      photo: "assets/img/congreso-compac-2026.jpg",
+      photoAlt: { es: "Hilary junto a su póster en el COMPAC 2026", en: "Hilary next to her poster at COMPAC 2026" }
     },
     {
       event: { es: "Congreso Internacional de Biotecnología · Costa Rica 2026 (5.º Bio Iberoamérica · 11.º BioTica)",
                en: "International Biotechnology Congress · Costa Rica 2026 (5th Bio Iberoamérica · 11th BioTica)" },
       role:  { es: "Póster científico · Autora principal · Área: Biotecnología Agrícola y Ambiental",
                en: "Scientific poster · Lead author · Track: Agricultural & Environmental Biotechnology" },
-      talk:  { es: "«MycoLab CR: an AI-powered fungal bioprospecting platform integrating climate modeling and enzymatic databases for Costa Rican mycobiota» (proyecto MycoNexus).",
-               en: "“MycoLab CR: an AI-powered fungal bioprospecting platform integrating climate modeling and enzymatic databases for Costa Rican mycobiota” (MycoNexus project)." },
+      talk:  { es: "«MycoNexus CR: plataforma de bioprospección fúngica asistida por inteligencia artificial que integra modelado climático y bases enzimáticas para la micobiota de Costa Rica».",
+               en: "“MycoNexus CR: an AI-assisted fungal bioprospecting platform integrating climate modeling and enzymatic databases for Costa Rican mycobiota”." },
       date:  { es: "Octubre 2026", en: "October 2026" },
-      place: { es: "7–9 oct · IICA, San José, Costa Rica", en: "7–9 Oct · IICA, San José, Costa Rica" }
+      place: { es: "7–9 oct · IICA, San José, Costa Rica", en: "7–9 Oct · IICA, San José, Costa Rica" },
+      photo: "assets/img/congreso-biotecnologia-2026.jpg",
+      photoAlt: { es: "Hilary junto al póster de MycoNexus CR en el Congreso Internacional de Biotecnología 2026", en: "Hilary next to the MycoNexus CR poster at the 2026 International Biotechnology Congress" }
     },
     {
       event: { es: "Microsoft Agents League Hackathon 2026", en: "Microsoft Agents League Hackathon 2026" },

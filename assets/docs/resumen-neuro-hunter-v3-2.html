@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resumen Neuro-Hunter v3.2 — Circularidad estructural en cohortes sintéticas — Hilary Suárez Fonseca</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 720px; margin: 0 auto; padding: 48px 24px 96px;
+    line-height: 1.7; color: #1a1a1a; background: #fbfaf7;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #121417; } a { color: #6ae4d8; } }
+  .kicker { font-family: system-ui, sans-serif; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: #0f766e; margin-bottom: 18px; }
+  h1 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 20px; }
+  h2 { font-family: system-ui, sans-serif; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin: 28px 0 12px; }
+  .meta { font-family: system-ui, sans-serif; font-size: .9rem; color: #666; margin-bottom: 8px; }
+  @media (prefers-color-scheme: dark) { .meta { color: #9aa7b2; } }
+  p { margin: 0 0 18px; text-align: justify; }
+  .keywords { font-family: system-ui, sans-serif; font-size: .9rem; text-align: left; }
+  hr { border: 0; border-top: 1px solid #ddd; margin: 32px 0; }
+  @media (prefers-color-scheme: dark) { hr { border-top-color: #333; } }
+  .back { font-family: system-ui, sans-serif; font-size: .85rem; }
+</style>
+</head>
+<body>
+  <p class="kicker">Neuro-Hunter v3.2</p>
+
+  <h1>Neuro-Hunter v3.2: documentación y corrección de una circularidad estructural en la generación de cohortes sintéticas para enfermedades raras. El caso de la mucopolisacaridosis tipo II</h1>
+
+  <p class="meta"><strong>Hilary Suárez Fonseca</strong></p>
+  <p class="meta">Escuela de Ingeniería en Biotecnología, Universidad de Ciencias Médicas (UCIMED), San José, Costa Rica</p>
+
+  <h2>Resumen</h2>
+
+  <p>El uso de cohortes sintéticas se ha extendido en el estudio de enfermedades raras ante la inaccesibilidad de cohortes multimodales reales. El objetivo de este trabajo es documentar y corregir un problema de circularidad estructural en la generación de estas cohortes, utilizando como caso de estudio el desarrollo de Neuro-Hunter v3.2, un framework de estratificación fenotípica para la mucopolisacaridosis tipo II (MPS II). Se desarrolló un sistema de código abierto fundamentado en una revisión narrativa (2018-2026) que implementa un índice determinístico y un generador sintético anclado a proporciones del Hunter Outcome Survey. En una segunda ronda de revisión interna se identificó que el modelo original derivaba el fenotipo de forma determinística a partir de los mismos biomarcadores empleados para predecirlo. La validación cruzada sobre 600 pacientes simulados cuantificó este efecto, evidenciando exactitudes tautológicas del 96–99 % sin generar columnas duplicadas evidentes. La corrección consistió en invertir el orden causal: sortear primero un fenotipo latente y derivar después los biomarcadores con ruido y solapamiento explícito. Bajo esta premisa causal biológicamente correcta, la exactitud de los clasificadores descendió a 87,0–88,3 % (AUC 0,907–0,924), valor consistente con el techo impuesto por el solapamiento biológico real. Este descenso no representa un deterioro algorítmico, sino la supresión de un sesgo. Se concluye que los estudios basados en cohortes sintéticas deben declarar explícitamente el orden causal de su generador. Dado que las métricas actuales cuantifican únicamente consistencia interna, la utilidad clínica de Neuro-Hunter requerirá validación con cohortes reales.</p>
+
+  <p class="keywords"><strong>Palabras clave:</strong> Mucopolisacaridosis II; Iduronato sulfatasa; Heparitín sulfato; Líquido cefalorraquídeo; Aprendizaje automático; Simulación por computador; Enfermedades raras</p>
+
+  <hr />
+  <p class="meta">Autora de correspondencia: <a href="mailto:hilary.suarezf@ucimed.ac.cr">hilary.suarezf@ucimed.ac.cr</a> · ORCID: <a href="https://orcid.org/0009-0005-8697-5179">0009-0005-8697-5179</a></p>
+  <p class="back"><a href="../../index.html">&larr; Volver al portafolio</a></p>
+</body>
+</html>
